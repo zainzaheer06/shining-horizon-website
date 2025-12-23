@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrical Products - Shining Horizon Trading</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2d8bc9',
+                        'primary-dark': '#1a5a8a',
+                        'primary-light': '#5bb5e0',
+                        'accent': '#5bb5e0',
+                        'accent-light': '#8ed0f0',
+                    },
+                    fontFamily: { 'inter': ['Inter', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .product-card { transition: all 0.3s ease; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0, 136, 204, 0.15); }
+        .brand-card { transition: all 0.3s ease; }
+        .brand-card:hover { transform: translateY(-3px); border-color: #2d8bc9; }
+    </style>
+</head>
+<body class="bg-gray-50 pt-16">
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <nav class="flex text-sm">
+                <a href="index.html" class="text-gray-500 hover:text-primary">Home</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <a href="categories.html" class="text-gray-500 hover:text-primary">Categories</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <span class="text-primary font-medium">Electrical Products</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-primary to-primary-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">Electrical Products</h1>
+                    <p class="text-xl text-white/90 mb-6" data-aos="fade-up" data-aos-delay="200">
+                        Complete range of electrical products including cables, switchgear, circuit breakers, transformers, and electrical accessories from leading manufacturers.
+                    </p>
+                    <div class="flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="bg-white/10 px-4 py-2 rounded-lg">
+                            <span class="text-sm font-semibold">300+ Products</span>
+                        </div>
+                        <div class="bg-white/10 px-4 py-2 rounded-lg">
+                            <span class="text-sm font-semibold">15+ Brands</span>
+                        </div>
+                        <div class="bg-white/10 px-4 py-2 rounded-lg">
+                            <span class="text-sm font-semibold">Quality Certified</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center" data-aos="fade-left">
+                    <img src="public/categories/electrical products.jpg" alt="Electrical Products" class="rounded-2xl shadow-2xl max-w-md mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Electrical Product Range</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Professional electrical solutions for industrial, commercial, and residential applications</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                
+                <!-- Circuit Breakers -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden bg-gray-100 flex items-center justify-center">
+                        <img src="public/products/product1.png" alt="Circuit Breakers" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Circuit Breakers</h3>
+                        <p class="text-gray-600 text-sm mb-3">MCB, MCCB, ACB</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Current:</span>
+                                <span class="font-semibold">6A - 6300A</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Voltage:</span>
+                                <span class="font-semibold">Up to 690V</span>
+                            </div>
+                        </div>
+                        <a href="quote.html?product=Circuit Breakers" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Cables & Wires -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 overflow-hidden bg-gray-100 flex items-center justify-center">
+                        <img src="public/products/product2.png" alt="Cables & Wires" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Cables & Wires</h3>
+                        <p class="text-gray-600 text-sm mb-3">Power & Control Cables</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Size:</span>
+                                <span class="font-semibold">0.5 - 1000 mm²</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Type:</span>
+                                <span class="font-semibold">LV/MV/HV</span>
+                            </div>
+                        </div>
+                        <a href="quote.html?product=Cables" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Switchgear -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 overflow-hidden bg-gray-100 flex items-center justify-center">
+                        <img src="public/products/product3.png" alt="Switchgear" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Switchgear</h3>
+                        <p class="text-gray-600 text-sm mb-3">LV & MV Switchgear</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Voltage:</span>
+                                <span class="font-semibold">Up to 36kV</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Type:</span>
+                                <span class="font-semibold">Indoor/Outdoor</span>
+                            </div>
+                        </div>
+                        <a href="quote.html?product=Switchgear" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Transformers -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 overflow-hidden bg-gray-100 flex items-center justify-center">
+                        <img src="public/products/product4.png" alt="Transformers" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Transformers</h3>
+                        <p class="text-gray-600 text-sm mb-3">Distribution Transformers</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Capacity:</span>
+                                <span class="font-semibold">50 - 2500 kVA</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Type:</span>
+                                <span class="font-semibold">Oil/Dry</span>
+                            </div>
+                        </div>
+                        <a href="quote.html?product=Transformers" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Distribution Boards -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <div class="h-48 overflow-hidden bg-gray-100 flex items-center justify-center">
+                        <img src="public/products/product5.png" alt="Distribution Boards" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Distribution Boards</h3>
+                        <p class="text-gray-600 text-sm mb-3">DB & Panel Boards</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Ways:</span>
+                                <span class="font-semibold">4 - 72 Ways</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Rating:</span>
+                                <span class="font-semibold">Up to 630A</span>
+                            </div>
+                        </div>
+                        <a href="quote.html?product=Distribution Boards" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Surge Protection -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+                    <div class="h-48 overflow-hidden bg-gray-100 flex items-center justify-center">
+                        <img src="public/products/product6.png" alt="Surge Protection" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Surge Protection</h3>
+                        <p class="text-gray-600 text-sm mb-3">SPD Devices</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Type:</span>
+                                <span class="font-semibold">Type 1, 2, 3</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Protection:</span>
+                                <span class="font-semibold">Up to 100kA</span>
+                            </div>
+                        </div>
+                        <a href="quote.html?product=Surge Protection" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Trusted Electrical Brands</h2>
+                <p class="text-gray-600">Premium electrical products from world-renowned manufacturers</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div class="brand-card bg-gray-50 p-6 rounded-xl border border-gray-200 text-center cursor-pointer" onclick="requestQuote('Schneider Electric', 'Electrical Products')">
+                    <img src="public/brands/brand3.png" alt="Schneider Electric" class="h-12 mx-auto mb-3">
+                    <h3 class="font-semibold text-gray-900">Schneider Electric</h3>
+                    <p class="text-xs text-gray-500 mt-1">Switchgear, Breakers</p>
+                </div>
+                <div class="brand-card bg-gray-50 p-6 rounded-xl border border-gray-200 text-center cursor-pointer" onclick="requestQuote('ABB', 'Electrical Products')">
+                    <img src="public/brands/brand2.png" alt="ABB" class="h-12 mx-auto mb-3">
+                    <h3 class="font-semibold text-gray-900">ABB</h3>
+                    <p class="text-xs text-gray-500 mt-1">Breakers, Switchgear</p>
+                </div>
+                <div class="brand-card bg-gray-50 p-6 rounded-xl border border-gray-200 text-center cursor-pointer" onclick="requestQuote('Siemens', 'Electrical Products')">
+                    <img src="public/brands/brand1.png" alt="Siemens" class="h-12 mx-auto mb-3">
+                    <h3 class="font-semibold text-gray-900">Siemens</h3>
+                    <p class="text-xs text-gray-500 mt-1">Electrical Systems</p>
+                </div>
+                <div class="brand-card bg-gray-50 p-6 rounded-xl border border-gray-200 text-center cursor-pointer" onclick="requestQuote('Legrand', 'Electrical Products')">
+                    <img src="public/brands/brand5.png" alt="Legrand" class="h-12 mx-auto mb-3">
+                    <h3 class="font-semibold text-gray-900">Legrand</h3>
+                    <p class="text-xs text-gray-500 mt-1">Wiring Devices</p>
+                </div>
+                <div class="brand-card bg-gray-50 p-6 rounded-xl border border-gray-200 text-center cursor-pointer" onclick="requestQuote('Eaton', 'Electrical Products')">
+                    <img src="public/brands/brand4.png" alt="Eaton" class="h-12 mx-auto mb-3">
+                    <h3 class="font-semibold text-gray-900">Eaton</h3>
+                    <p class="text-xs text-gray-500 mt-1">Power Distribution</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-primary py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Need Electrical Products?</h2>
+            <p class="text-white/90 text-lg mb-8">Our experts can help you find the right electrical solutions for your needs</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="quote.html" class="bg-white text-primary font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition">Request Quote</a>
+                <a href="index.html#contact" class="border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white hover:text-primary transition">Contact Expert</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load Shared Components -->
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    
+    <script>
+        AOS.init({ duration: 800, easing: 'ease-out', once: true });
+
+        function requestQuote(brand, category) {
+            localStorage.setItem('selectedBrand', brand);
+            localStorage.setItem('selectedCategory', category);
+            window.location.href = 'quote.html';
+        }
+    </script>
+</body>
+</html>

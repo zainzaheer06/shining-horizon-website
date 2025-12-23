@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Automation - Shining Horizon Trading</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2d8bc9',
+                        'primary-dark': '#1a5a8a',
+                        'primary-light': '#5bb5e0',
+                        'accent': '#5bb5e0',
+                        'accent-light': '#8ed0f0',
+                    },
+                    fontFamily: { 'inter': ['Inter', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 136, 204, 0.15);
+        }
+        .brand-card {
+            transition: all 0.3s ease;
+        }
+        .brand-card:hover {
+            transform: translateY(-3px);
+            border-color: #2d8bc9;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 pt-16">
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <nav class="flex text-sm">
+                <a href="index.html" class="text-gray-500 hover:text-primary">Home</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <a href="categories.html" class="text-gray-500 hover:text-primary">Categories</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <span class="text-primary font-medium">Industrial Automation</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-primary to-primary-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">Industrial Automation</h1>
+                    <p class="text-xl text-white/90 mb-6" data-aos="fade-up" data-aos-delay="200">
+                        Complete range of industrial automation products including PLCs, VFDs, HMIs, sensors, and control systems from leading manufacturers.
+                    </p>
+                    <div class="flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="bg-white/10 px-4 py-2 rounded-lg">
+                            <span class="text-sm font-semibold">500+ Products</span>
+                        </div>
+                        <div class="bg-white/10 px-4 py-2 rounded-lg">
+                            <span class="text-sm font-semibold">20+ Brands</span>
+                        </div>
+                        <div class="bg-white/10 px-4 py-2 rounded-lg">
+                            <span class="text-sm font-semibold">Global Support</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center" data-aos="fade-left">
+                    <img src="public/categories/industrial automation.png" alt="Industrial Automation" class="rounded-2xl shadow-2xl max-w-md mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Automation Product Range</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Professional automation solutions for manufacturing, process control, and industrial applications</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                
+                <!-- PLC Controllers -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden bg-gray-100">
+                        <img src="public/products/product1.png" alt="PLC Controllers" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">PLC Controllers</h3>
+                        <p class="text-gray-600 text-sm mb-3">Programmable Logic Controllers</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">I/O Points:</span>
+                                <span class="font-semibold">8 - 2048</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Memory:</span>
+                                <span class="font-semibold">Up to 8MB</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Communication:</span>
+                                <span class="font-semibold">Ethernet/Serial</span>
+                            </div>
+                        </div>
+                        <a href="product-plc.html" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">View Details</a>
+                    </div>
+                </div>
+
+                <!-- VFD Drives -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 overflow-hidden bg-gray-100">
+                        <img src="public/products/product2.png" alt="VFD Drives" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">VFD Drives</h3>
+                        <p class="text-gray-600 text-sm mb-3">Variable Frequency Drives</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Power:</span>
+                                <span class="font-semibold">0.37 - 800 kW</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Voltage:</span>
+                                <span class="font-semibold">230V - 690V</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Control:</span>
+                                <span class="font-semibold">Vector/V/F</span>
+                            </div>
+                        </div>
+                        <a href="quote.html?product=VFD Drives" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- HMI Displays -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 overflow-hidden bg-gray-100">
+                        <img src="public/products/product3.png" alt="HMI Displays" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">HMI Displays</h3>
+                        <p class="text-gray-600 text-sm mb-3">Human Machine Interface</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Screen Size:</span>
+                                <span class="font-semibold">4" - 21"</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Resolution:</span>
+                                <span class="font-semibold">Up to 1920x1080</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Touch:</span>
+                                <span class="font-semibold">Resistive/Capacitive</span>
+                            </div>
+                        </div>
+                        <a href="quote.html?product=HMI Displays" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Sensors -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 overflow-hidden bg-gray-100">
+                        <img src="public/products/product4.png" alt="Sensors" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Sensors</h3>
+                        <p class="text-gray-600 text-sm mb-3">Industrial Sensors</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Types:</span>
+                                <span class="font-semibold">Proximity/Photo</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Range:</span>
+                                <span class="font-semibold">2mm - 60m</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Output:</span>
+                                <span class="font-semibold">NPN/PNP/Analog</span>
+                            </div>
+                        </div>
+                        <a href="quote.html?product=Industrial Sensors" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Servo Drives -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <div class="h-48 overflow-hidden bg-gray-100">
+                        <img src="public/products/product5.png" alt="Servo Drives" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Servo Drives</h3>
+                        <p class="text-gray-600 text-sm mb-3">AC Servo Motor Drives</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Power:</span>
+                                <span class="font-semibold">0.1 - 55 kW</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Control:</span>
+                                <span class="font-semibold">Position/Speed/Torque</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Feedback:</span>
+                                <span class="font-semibold">Encoder/Resolver</span>
+                            </div>
+                        </div>
+                        <a href="quote.html?product=Servo Drives" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Contactors -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+                    <div class="h-48 overflow-hidden bg-gray-100">
+                        <img src="public/products/product6.png" alt="Contactors" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Contactors</h3>
+                        <p class="text-gray-600 text-sm mb-3">Motor Control Contactors</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Current:</span>
+                                <span class="font-semibold">9A - 800A</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Voltage:</span>
+                                <span class="font-semibold">24V - 690V</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Poles:</span>
+                                <span class="font-semibold">3P/4P</span>
+                            </div>
+                        </div>
+                        <a href="quote.html?product=Motor Contactors" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Encoders -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+                    <div class="h-48 overflow-hidden bg-gray-100">
+                        <img src="public/products/product7.png" alt="Encoders" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Encoders</h3>
+                        <p class="text-gray-600 text-sm mb-3">Rotary & Linear Encoders</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Resolution:</span>
+                                <span class="font-semibold">100 - 262,144 PPR</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Type:</span>
+                                <span class="font-semibold">Incremental/Absolute</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Output:</span>
+                                <span class="font-semibold">TTL/HTL/SSI</span>
+                            </div>
+                        </div>
+                        <a href="quote.html?product=Rotary Encoders" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Push Buttons -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="700">
+                    <div class="h-48 overflow-hidden bg-gray-100">
+                        <img src="public/products/product8.png" alt="Push Buttons" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Push Buttons</h3>
+                        <p class="text-gray-600 text-sm mb-3">Control Push Buttons</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Size:</span>
+                                <span class="font-semibold">16mm - 30mm</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Type:</span>
+                                <span class="font-semibold">Momentary/Latching</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">LED:</span>
+                                <span class="font-semibold">Available</span>
+                            </div>
+                        </div>
+                        <a href="quote.html?product=Control Push Buttons" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Trusted Automation Brands</h2>
+                <p class="text-gray-600">Premium industrial automation products from world-renowned manufacturers</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div class="brand-card bg-gray-50 p-6 rounded-xl border border-gray-200 text-center cursor-pointer" onclick="requestQuote('Siemens', 'Industrial Automation')">
+                    <img src="public/brands/brand1.png" alt="Siemens" class="h-12 mx-auto mb-3">
+                    <h3 class="font-semibold text-gray-900">Siemens</h3>
+                    <p class="text-xs text-gray-500 mt-1">PLCs, HMIs, Drives</p>
+                </div>
+                <div class="brand-card bg-gray-50 p-6 rounded-xl border border-gray-200 text-center cursor-pointer" onclick="requestQuote('ABB', 'Industrial Automation')">
+                    <img src="public/brands/brand2.png" alt="ABB" class="h-12 mx-auto mb-3">
+                    <h3 class="font-semibold text-gray-900">ABB</h3>
+                    <p class="text-xs text-gray-500 mt-1">Drives, Motors, PLCs</p>
+                </div>
+                <div class="brand-card bg-gray-50 p-6 rounded-xl border border-gray-200 text-center cursor-pointer" onclick="requestQuote('Schneider Electric', 'Industrial Automation')">
+                    <img src="public/brands/brand3.png" alt="Schneider Electric" class="h-12 mx-auto mb-3">
+                    <h3 class="font-semibold text-gray-900">Schneider Electric</h3>
+                    <p class="text-xs text-gray-500 mt-1">Modicon PLCs, HMIs</p>
+                </div>
+                <div class="brand-card bg-gray-50 p-6 rounded-xl border border-gray-200 text-center cursor-pointer" onclick="requestQuote('OMRON', 'Industrial Automation')">
+                    <img src="public/brands/brand4.png" alt="OMRON" class="h-12 mx-auto mb-3">
+                    <h3 class="font-semibold text-gray-900">OMRON</h3>
+                    <p class="text-xs text-gray-500 mt-1">PLCs, Sensors, Safety</p>
+                </div>
+                <div class="brand-card bg-gray-50 p-6 rounded-xl border border-gray-200 text-center cursor-pointer" onclick="requestQuote('Mitsubishi', 'Industrial Automation')">
+                    <img src="public/brands/brand5.png" alt="Mitsubishi" class="h-12 mx-auto mb-3">
+                    <h3 class="font-semibold text-gray-900">Mitsubishi</h3>
+                    <p class="text-xs text-gray-500 mt-1">MELSEC PLCs, GOT HMIs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-primary py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Need Custom Automation Solutions?</h2>
+            <p class="text-white/90 text-lg mb-8">Our automation experts can help you design and implement the perfect solution for your needs</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="quote.html" class="bg-white text-primary font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition">Request Quote</a>
+                <a href="index.html#contact" class="border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white hover:text-primary transition">Contact Expert</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load Shared Components -->
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    
+    <script>
+        AOS.init({ duration: 800, easing: 'ease-out', once: true });
+
+        function requestQuote(brand, category) {
+            localStorage.setItem('selectedBrand', brand);
+            localStorage.setItem('selectedCategory', category);
+            window.location.href = 'quote.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifting Equipment - Shining Horizon Trading</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2d8bc9',
+                        'primary-dark': '#1a5a8a',
+                        'primary-light': '#5bb5e0',
+                        'accent': '#5bb5e0',
+                        'accent-light': '#8ed0f0',
+                    },
+                    fontFamily: { 'inter': ['Inter', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 136, 204, 0.15);
+        }
+        .brand-card {
+            transition: all 0.3s ease;
+        }
+        .brand-card:hover {
+            transform: translateY(-3px);
+            border-color: #2d8bc9;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 pt-16">
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <nav class="flex text-sm">
+                <a href="index.html" class="text-gray-500 hover:text-primary">Home</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <a href="categories.html" class="text-gray-500 hover:text-primary">Categories</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <span class="text-primary font-medium">Lifting Equipment</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-primary to-primary-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">Lifting Equipment</h1>
+                    <p class="text-xl text-white/90 mb-6" data-aos="fade-up" data-aos-delay="200">
+                        Professional grade lifting and rigging equipment for heavy-duty industrial applications. From 0.5 ton to 50+ ton capacity.
+                    </p>
+                    <div class="flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="bg-white/10 px-4 py-2 rounded-lg">
+                            <span class="text-sm font-semibold">300+ Products</span>
+                        </div>
+                        <div class="bg-white/10 px-4 py-2 rounded-lg">
+                            <span class="text-sm font-semibold">15+ Brands</span>
+                        </div>
+                        <div class="bg-white/10 px-4 py-2 rounded-lg">
+                            <span class="text-sm font-semibold">0.5-50+ Ton Capacity</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center" data-aos="fade-left">
+                    <img src="public/categories/lifting-equipment.jpg" alt="Lifting Equipment" class="rounded-2xl shadow-2xl max-w-md mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Lifting Equipment Range</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Professional lifting solutions for construction, manufacturing, and industrial applications</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                
+                <!-- Chain Hoists -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden bg-gray-100">
+                        <img src="public/products/Hoist.webp" alt="Chain Hoist" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Chain Hoists</h3>
+                        <p class="text-gray-600 text-sm mb-3">Manual & Electric Chain Hoists</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Capacity:</span>
+                                <span class="font-semibold">0.5 - 20 Ton</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Lift Height:</span>
+                                <span class="font-semibold">3 - 12 meters</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Type:</span>
+                                <span class="font-semibold">Manual/Electric</span>
+                            </div>
+                        </div>
+                        <a href="product-chain-hoist.html" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Wire Rope Hoists -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 overflow-hidden bg-gray-100">
+                        <img src="public/products/Wire Rope Hoists.jpg" alt="Wire Rope Hoist" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Wire Rope Hoists</h3>
+                        <p class="text-gray-600 text-sm mb-3">Electric Wire Rope Hoists</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Capacity:</span>
+                                <span class="font-semibold">1 - 50 Ton</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Lift Height:</span>
+                                <span class="font-semibold">6 - 30 meters</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Speed:</span>
+                                <span class="font-semibold">2-8 m/min</span>
+                            </div>
+                        </div>
+                        <a href="product-wire-rope-hoist.html" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Shackles -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 overflow-hidden bg-gray-100">
+                        <img src="public/products/Shackles.jfif" alt="Shackles" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Shackles</h3>
+                        <p class="text-gray-600 text-sm mb-3">Bow & Dee Shackles</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">WLL:</span>
+                                <span class="font-semibold">0.33 - 150 Ton</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Material:</span>
+                                <span class="font-semibold">Stainless Steel</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Standard:</span>
+                                <span class="font-semibold">US/European</span>
+                            </div>
+                        </div>
+                        <a href="product-shackles.html" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Wire Rope Clamps -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 overflow-hidden bg-gray-100">
+                        <img src="public/products/Wire Rope Clamps.jpg" alt="Wire Rope Clamps" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Wire Rope Clamps</h3>
+                        <p class="text-gray-600 text-sm mb-3">Galvanized Wire Rope Clamps</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Size:</span>
+                                <span class="font-semibold">3mm - 40mm</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Material:</span>
+                                <span class="font-semibold">Galvanized Steel</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Type:</span>
+                                <span class="font-semibold">U-Bolt/Fist Grip</span>
+                            </div>
+                        </div>
+                        <a href="product-wire-clamps.html" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Lifting Hooks -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <div class="h-48 overflow-hidden bg-gray-100">
+                        <img src="public/products/Lifting Hooks.avif" alt="Lifting Hooks" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Lifting Hooks</h3>
+                        <p class="text-gray-600 text-sm mb-3">Eye & Clevis Hooks</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">WLL:</span>
+                                <span class="font-semibold">1 - 100 Ton</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Safety:</span>
+                                <span class="font-semibold">Safety Latch</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Grade:</span>
+                                <span class="font-semibold">Grade 80/100</span>
+                            </div>
+                        </div>
+                        <a href="product-lifting-hooks.html" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Lifting Slings -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+                    <div class="h-48 overflow-hidden bg-gray-100">
+                        <img src="public/products/Lifting Slings.jpg" alt="Lifting Slings" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Lifting Slings</h3>
+                        <p class="text-gray-600 text-sm mb-3">Chain, Wire & Webbing Slings</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">WLL:</span>
+                                <span class="font-semibold">0.5 - 50 Ton</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Length:</span>
+                                <span class="font-semibold">1 - 20 meters</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Type:</span>
+                                <span class="font-semibold">1/2/3/4 Leg</span>
+                            </div>
+                        </div>
+                        <a href="product-lifting-slings.html" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Load Blocks -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+                    <div class="h-48 overflow-hidden bg-gray-100">
+                        <img src="public/products/Load Blocks.jpg" alt="Load Blocks" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Load Blocks</h3>
+                        <p class="text-gray-600 text-sm mb-3">Snatch & Pulley Blocks</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">WLL:</span>
+                                <span class="font-semibold">1 - 50 Ton</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Sheaves:</span>
+                                <span class="font-semibold">1 - 6 Sheaves</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Bearing:</span>
+                                <span class="font-semibold">Ball/Roller</span>
+                            </div>
+                        </div>
+                        <a href="product-load-blocks.html" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Turnbuckles -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="700">
+                    <div class="h-48 overflow-hidden bg-gray-100">
+                        <img src="public/products/Turnbuckle.jpg" alt="Turnbuckles" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Turnbuckles</h3>
+                        <p class="text-gray-600 text-sm mb-3">Hook & Eye Turnbuckles</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">WLL:</span>
+                                <span class="font-semibold">0.15 - 50 Ton</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Thread:</span>
+                                <span class="font-semibold">M6 - M64</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Finish:</span>
+                                <span class="font-semibold">Galvanized/SS</span>
+                            </div>
+                        </div>
+                        <a href="product-turnbuckles.html" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium hover:bg-primary-dark transition">View Details</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Trusted Brands We Deal With</h2>
+                <p class="text-gray-600">Premium lifting equipment from world-renowned manufacturers</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div class="brand-card bg-gray-50 p-6 rounded-xl border border-gray-200 text-center cursor-pointer" onclick="requestQuote('Kito', 'Lifting Equipment')">
+                    <img src="public/brands/kito-logo.png" alt="Kito" class="h-12 mx-auto mb-3">
+                    <h3 class="font-semibold text-gray-900">Kito</h3>
+                    <p class="text-xs text-gray-500 mt-1">Chain Hoists & Cranes</p>
+                </div>
+                <div class="brand-card bg-gray-50 p-6 rounded-xl border border-gray-200 text-center cursor-pointer" onclick="requestQuote('Elephant', 'Lifting Equipment')">
+                    <img src="public/brands/elephant-logo.png" alt="Elephant" class="h-12 mx-auto mb-3">
+                    <h3 class="font-semibold text-gray-900">Elephant</h3>
+                    <p class="text-xs text-gray-500 mt-1">Manual Chain Hoists</p>
+                </div>
+                <div class="brand-card bg-gray-50 p-6 rounded-xl border border-gray-200 text-center cursor-pointer" onclick="requestQuote('Crosby', 'Lifting Equipment')">
+                    <img src="public/brands/crosby-logo.png" alt="Crosby" class="h-12 mx-auto mb-3">
+                    <h3 class="font-semibold text-gray-900">Crosby</h3>
+                    <p class="text-xs text-gray-500 mt-1">Rigging Hardware</p>
+                </div>
+                <div class="brand-card bg-gray-50 p-6 rounded-xl border border-gray-200 text-center cursor-pointer" onclick="requestQuote('Gunnebo', 'Lifting Equipment')">
+                    <img src="public/brands/gunnebo-logo.png" alt="Gunnebo" class="h-12 mx-auto mb-3">
+                    <h3 class="font-semibold text-gray-900">Gunnebo</h3>
+                    <p class="text-xs text-gray-500 mt-1">Lifting Chains</p>
+                </div>
+                <div class="brand-card bg-gray-50 p-6 rounded-xl border border-gray-200 text-center cursor-pointer" onclick="requestQuote('Pewag', 'Lifting Equipment')">
+                    <img src="public/brands/pewag-logo.png" alt="Pewag" class="h-12 mx-auto mb-3">
+                    <h3 class="font-semibold text-gray-900">Pewag</h3>
+                    <p class="text-xs text-gray-500 mt-1">Chain Slings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-primary py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Need Custom Lifting Solutions?</h2>
+            <p class="text-white/90 text-lg mb-8">Our experts can help you choose the right equipment for your specific requirements</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="quote.html" class="bg-white text-primary font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition">Request Quote</a>
+                <a href="index.html#contact" class="border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white hover:text-primary transition">Contact Expert</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load Shared Components -->
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    
+    <script>
+        AOS.init({ duration: 800, easing: 'ease-out', once: true });
+
+        function requestQuote(brand, category) {
+            localStorage.setItem('selectedBrand', brand);
+            localStorage.setItem('selectedCategory', category);
+            window.location.href = 'quote.html';
+        }
+    </script>
+</body>
+</html>

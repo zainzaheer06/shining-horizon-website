@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLC Controllers - Industrial Automation - Shining Horizon Trading</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2d8bc9',
+                        'primary-dark': '#1a5a8a',
+                        'primary-light': '#5bb5e0',
+                        'accent': '#5bb5e0',
+                        'accent-light': '#8ed0f0',
+                    },
+                    fontFamily: { 'inter': ['Inter', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .brand-card {
+            transition: all 0.3s ease;
+        }
+        .brand-card:hover {
+            transform: translateY(-3px);
+            border-color: #2d8bc9;
+        }
+        .spec-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 pt-16">
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <nav class="flex text-sm">
+                <a href="index.html" class="text-gray-500 hover:text-primary">Home</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <a href="categories.html" class="text-gray-500 hover:text-primary">Categories</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <a href="category-automation.html" class="text-gray-500 hover:text-primary">Industrial Automation</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <span class="text-primary font-medium">PLC Controllers</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Product Details -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Product Images -->
+                <div data-aos="fade-right">
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                        <div class="relative h-96 bg-gray-100 flex items-center justify-center">
+                            <img id="main-image" src="public/products/product1.png" alt="PLC Controllers" class="max-w-full max-h-full object-contain">
+                            
+                            <!-- Navigation Arrows -->
+                            <button onclick="prevImage()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg transition">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                            </button>
+                            <button onclick="nextImage()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg transition">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <div class="grid grid-cols-4 gap-2">
+                                <img onclick="changeImage(0)" src="public/products/product1.png" alt="PLC View 1" class="thumbnail w-full h-20 object-cover rounded-lg cursor-pointer border-2 border-primary">
+                                <img onclick="changeImage(1)" src="public/products/product2.png" alt="PLC View 2" class="thumbnail w-full h-20 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-primary">
+                                <img onclick="changeImage(2)" src="public/products/product3.png" alt="PLC View 3" class="thumbnail w-full h-20 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-primary">
+                                <img onclick="changeImage(3)" src="public/products/product4.png" alt="PLC View 4" class="thumbnail w-full h-20 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-primary">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div data-aos="fade-left">
+                    <div class="bg-primary/5 px-4 py-2 rounded-full inline-block mb-4">
+                        <span class="text-primary font-semibold text-sm">INDUSTRIAL AUTOMATION</span>
+                    </div>
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">PLC Controllers</h1>
+                    <p class="text-gray-600 text-lg mb-6">
+                        Professional grade Programmable Logic Controllers for industrial automation applications. 
+                        Available from compact micro PLCs to high-performance modular systems with extensive I/O capabilities.
+                    </p>
+
+                    <!-- Quick Specs -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg mb-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Quick Specifications</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <span class="text-gray-500 text-sm">I/O Points</span>
+                                <p class="font-semibold text-lg">8 - 2048</p>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 text-sm">Memory</span>
+                                <p class="font-semibold text-lg">Up to 8MB</p>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 text-sm">Scan Time</span>
+                                <p class="font-semibold text-lg">0.1 - 10ms</p>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 text-sm">Communication</span>
+                                <p class="font-semibold text-lg">Ethernet/Serial</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Available Brands - Moved Up -->
+            <div class="bg-white rounded-xl p-6 shadow-lg mb-8 mt-12">
+                <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Available Brands</h3>
+                <p class="text-gray-600 text-center mb-6">Choose from our selection of premium PLC manufacturers</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="brand-card bg-white p-6 rounded-xl border border-gray-200 text-center cursor-pointer" onclick="requestQuote('Siemens', 'PLC Controllers')">
+                        <img src="public/brands/brand1.png" alt="Siemens" class="h-16 mx-auto mb-4">
+                        <h3 class="font-bold text-gray-900 mb-2">Siemens</h3>
+                        <p class="text-sm text-gray-600 mb-3">SIMATIC S7 series PLCs with TIA Portal programming</p>
+                        <div class="text-xs text-gray-500 space-y-1">
+                            <div>• S7-1200, S7-1500 Series</div>
+                            <div>• TIA Portal Software</div>
+                            <div>• Profinet Communication</div>
+                        </div>
+                        <button class="mt-4 w-full bg-primary text-white py-2 rounded-lg text-sm font-medium hover:bg-primary-dark transition">Request Quote</button>
+                    </div>
+
+                    <div class="brand-card bg-white p-6 rounded-xl border border-gray-200 text-center cursor-pointer" onclick="requestQuote('ABB', 'PLC Controllers')">
+                        <img src="public/brands/brand2.png" alt="ABB" class="h-16 mx-auto mb-4">
+                        <h3 class="font-bold text-gray-900 mb-2">ABB</h3>
+                        <p class="text-sm text-gray-600 mb-3">AC500 series PLCs with Automation Builder</p>
+                        <div class="text-xs text-gray-500 space-y-1">
+                            <div>• AC500-eCo, AC500 V3</div>
+                            <div>• Automation Builder</div>
+                            <div>• Ethernet/IP, Modbus</div>
+                        </div>
+                        <button class="mt-4 w-full bg-primary text-white py-2 rounded-lg text-sm font-medium hover:bg-primary-dark transition">Request Quote</button>
+                    </div>
+
+                    <div class="brand-card bg-white p-6 rounded-xl border border-gray-200 text-center cursor-pointer" onclick="requestQuote('Schneider Electric', 'PLC Controllers')">
+                        <img src="public/brands/brand3.png" alt="Schneider Electric" class="h-16 mx-auto mb-4">
+                        <h3 class="font-bold text-gray-900 mb-2">Schneider Electric</h3>
+                        <p class="text-sm text-gray-600 mb-3">Modicon series PLCs with EcoStruxure Machine Expert</p>
+                        <div class="text-xs text-gray-500 space-y-1">
+                            <div>• Modicon M221, M241, M251</div>
+                            <div>• EcoStruxure Machine Expert</div>
+                            <div>• Ethernet, Modbus, CANopen</div>
+                        </div>
+                        <button class="mt-4 w-full bg-primary text-white py-2 rounded-lg text-sm font-medium hover:bg-primary-dark transition">Request Quote</button>
+                    </div>
+
+                    <div class="brand-card bg-white p-6 rounded-xl border border-gray-200 text-center cursor-pointer" onclick="requestQuote('OMRON', 'PLC Controllers')">
+                        <img src="public/brands/brand4.png" alt="OMRON" class="h-16 mx-auto mb-4">
+                        <h3 class="font-bold text-gray-900 mb-2">OMRON</h3>
+                        <p class="text-sm text-gray-600 mb-3">CP series PLCs with Sysmac Studio programming</p>
+                        <div class="text-xs text-gray-500 space-y-1">
+                            <div>• CP1E, CP1L, NJ Series</div>
+                            <div>• Sysmac Studio</div>
+                            <div>• EtherCAT, EtherNet/IP</div>
+                        </div>
+                        <button class="mt-4 w-full bg-primary text-white py-2 rounded-lg text-sm font-medium hover:bg-primary-dark transition">Request Quote</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="text-center">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="quote.html?product=PLC Controllers" class="bg-primary text-white font-bold py-4 px-8 rounded-lg hover:bg-primary-dark transition flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        Request Quote
+                    </a>
+                    <a href="index.html#contact" class="border-2 border-primary text-primary font-bold py-4 px-8 rounded-lg hover:bg-primary hover:text-white transition flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                        Contact Expert
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Applications</h2>
+                <p class="text-gray-600">PLC controllers are ideal for various industrial automation applications</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center" data-aos="fade-up">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Manufacturing</h3>
+                    <p class="text-gray-600">Assembly lines, conveyor systems, and production control</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Process Control</h3>
+                    <p class="text-gray-600">Chemical processing, water treatment, and batch control</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Building Automation</h3>
+                    <p class="text-gray-600">HVAC control, lighting systems, and energy management</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Power & Utilities</h3>
+                    <p class="text-gray-600">Power distribution, substation automation, and grid control</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Machine Control</h3>
+                    <p class="text-gray-600">CNC machines, packaging equipment, and robotics</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Oil & Gas</h3>
+                    <p class="text-gray-600">Pipeline control, refinery automation, and safety systems</p>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-primary py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Ready to Order PLC Controllers?</h2>
+            <p class="text-white/90 text-lg mb-8">Get expert advice and competitive pricing for your automation requirements</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="quote.html?product=PLC Controllers" class="bg-white text-primary font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition">Request Detailed Quote</a>
+                <a href="index.html#contact" class="border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white hover:text-primary transition">Speak to Expert</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load Shared Components -->
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    
+    <script>
+        AOS.init({ duration: 800, easing: 'ease-out', once: true });
+
+        // Image carousel functionality
+        const images = [
+            'public/products/product1.png',
+            'public/products/product2.png',
+            'public/products/product3.png',
+            'public/products/product4.png'
+        ];
+        let currentImageIndex = 0;
+
+        function changeImage(index) {
+            currentImageIndex = index;
+            document.getElementById('main-image').src = images[index];
+            
+            // Update thumbnail borders
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach((thumb, i) => {
+                if (i === index) {
+                    thumb.classList.remove('border-transparent');
+                    thumb.classList.add('border-primary');
+                } else {
+                    thumb.classList.remove('border-primary');
+                    thumb.classList.add('border-transparent');
+                }
+            });
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            changeImage(currentImageIndex);
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            changeImage(currentImageIndex);
+        }
+
+        function requestQuote(brand, product) {
+            // Store selection in localStorage and redirect to quote page
+            localStorage.setItem('selectedBrand', brand);
+            localStorage.setItem('selectedProduct', product);
+            localStorage.setItem('selectedCategory', 'Industrial Automation');
+            window.location.href = 'quote.html';
+        }
+    </script>
+</body>
+</html>

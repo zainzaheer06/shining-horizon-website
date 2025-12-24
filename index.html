@@ -371,52 +371,8 @@
         </div>
     </div>
 
-    <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-3">
-                <a href="#home" class="flex items-center gap-3">
-                    <img src="public/logo/Shinning_Horizon_logo.png" alt="Shining Horizon Logo" class="h-12 w-auto">
-                    <div class="hidden sm:flex flex-col justify-center border-l border-gray-300 pl-3">
-                        <h1 class="text-primary font-bold text-xs tracking-wider leading-tight">SHINING HORIZON TRADING CO.</h1>
-                        <p class="text-primary-dark mt-0.5" dir="rtl" style="font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif; font-size: 13px; font-weight: 500;">شركة الأفق المشع للتجارة</p>
-                    </div>
-                </a>
-                <nav class="hidden lg:flex items-center gap-8">
-                    <a href="#home" class="text-gray-600 hover:text-primary transition font-medium text-sm">Home</a>
-                    <a href="#about" class="text-gray-600 hover:text-primary transition font-medium text-sm">About</a>
-                    <a href="categories.html" class="text-gray-600 hover:text-primary transition font-medium text-sm">Categories</a>
-                    <a href="#products" class="text-gray-600 hover:text-primary transition font-medium text-sm">Products</a>
-                    <a href="#services" class="text-gray-600 hover:text-primary transition font-medium text-sm">Services</a>
-                    <a href="#contact" class="text-gray-600 hover:text-primary transition font-medium text-sm">Contact</a>
-                </nav>
-                <div class="flex items-center gap-4">
-                    <a href="quote.html" class="hidden sm:flex btn-primary bg-primary text-white font-semibold py-3 px-6 rounded-lg">Get Quote</a>
-                    <button id="mobile-menu-btn" class="lg:hidden text-gray-600 p-2">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div id="mobile-menu" class="lg:hidden fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300">
-            <div class="p-6">
-                <div class="flex justify-between items-center mb-10">
-                    <h2 class="text-2xl font-bold text-primary">Menu</h2>
-                    <button id="close-menu" class="text-gray-600 p-2">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-                    </button>
-                </div>
-                <nav class="flex flex-col gap-6">
-                    <a href="#home" class="text-xl font-semibold text-gray-700 hover:text-primary">Home</a>
-                    <a href="#about" class="text-xl font-semibold text-gray-700 hover:text-primary">About</a>
-                    <a href="categories.html" class="text-xl font-semibold text-gray-700 hover:text-primary">Categories</a>
-                    <a href="#products" class="text-xl font-semibold text-gray-700 hover:text-primary">Products</a>
-                    <a href="#services" class="text-xl font-semibold text-gray-700 hover:text-primary">Services</a>
-                    <a href="#contact" class="text-xl font-semibold text-gray-700 hover:text-primary">Contact</a>
-                </nav>
-            </div>
-        </div>
-    </header>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
 
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center hero-bg-pattern relative overflow-hidden">
@@ -476,43 +432,16 @@
                             <div class="text-center mb-12">
                                 <p class="text-base font-semibold text-gray-700 uppercase tracking-wider">TRUSTED BY</p>
                             </div>
-                            <!-- Two rows with bigger logos -->
-                            <div class="flex flex-col items-center space-y-10">
-                                <!-- First row - 5 logos -->
-                                <div class="flex items-center justify-center space-x-12 md:space-x-16 lg:space-x-20">
-                                    <div class="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110">
-                                        <img src="public/brands/kito-logo.png" alt="Kito" class="h-10 w-auto filter grayscale hover:grayscale-0">
-                                    </div>
-                                    <div class="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110">
-                                        <img src="public/brands/yale-logo.png" alt="Yale" class="h-10 w-auto filter grayscale hover:grayscale-0">
-                                    </div>
-                                    <div class="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110">
-                                        <img src="public/brands/crosby-logo.png" alt="Crosby" class="h-10 w-auto filter grayscale hover:grayscale-0">
-                                    </div>
-                                    <div class="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110">
-                                        <img src="public/brands/elephant-logo.png" alt="Elephant" class="h-10 w-auto filter grayscale hover:grayscale-0">
-                                    </div>
-                                    <div class="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110">
-                                        <img src="public/brands/gunnebo-logo.png" alt="Gunnebo" class="h-10 w-auto filter grayscale hover:grayscale-0">
-                                    </div>
+                            <!-- Clean single row with 3 logos -->
+                            <div class="flex items-center justify-center gap-16 md:gap-20 lg:gap-24 xl:gap-28">
+                                <div class="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110">
+                                    <img src="public/brands/kito-logo.png" alt="KITO" class="h-10 md:h-11 lg:h-12 w-auto filter grayscale hover:grayscale-0">
                                 </div>
-                                <!-- Second row - 5 logos -->
-                                <div class="flex items-center justify-center space-x-12 md:space-x-16 lg:space-x-20">
-                                    <div class="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110">
-                                        <img src="public/brands/pewag-logo.png" alt="Pewag" class="h-10 w-auto filter grayscale hover:grayscale-0">
-                                    </div>
-                                    <div class="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110">
-                                        <img src="public/brands/ingersoll-rand-logo.png" alt="Ingersoll Rand" class="h-10 w-auto filter grayscale hover:grayscale-0">
-                                    </div>
-                                    <div class="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110">
-                                        <img src="public/brands/brand1.png" alt="Brand" class="h-10 w-auto filter grayscale hover:grayscale-0">
-                                    </div>
-                                    <div class="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110">
-                                        <img src="public/brands/brand2.png" alt="Brand" class="h-10 w-auto filter grayscale hover:grayscale-0">
-                                    </div>
-                                    <div class="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110">
-                                        <img src="public/brands/brand3.png" alt="Brand" class="h-10 w-auto filter grayscale hover:grayscale-0">
-                                    </div>
+                                <div class="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110">
+                                    <img src="public/brands/yale-logo.png" alt="Yale" class="h-10 md:h-11 lg:h-12 w-auto filter grayscale hover:grayscale-0">
+                                </div>
+                                <div class="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110">
+                                    <img src="public/brands/crosby-logo.png" alt="Crosby" class="h-10 md:h-11 lg:h-12 w-auto filter grayscale hover:grayscale-0">
                                 </div>
                             </div>
                         </div>
@@ -1700,6 +1629,9 @@
             });
         }
     </script>
+
+    <!-- Load Shared Components -->
+    <script src="components/header.js?v=20241224"></script>
+    <script src="components/footer.js?v=20241224"></script>
 </body>
-</html>
 </html>

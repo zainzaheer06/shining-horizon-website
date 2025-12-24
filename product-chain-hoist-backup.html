@@ -39,29 +39,9 @@
         }
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center gap-2">
-                    <img src="public/logo/shinning_horizon_logo.png" alt="Shining Horizon Logo" class="h-10 w-auto">
-                    <div class="hidden sm:block border-l border-gray-200 pl-2">
-                        <h1 class="text-primary font-bold text-xs tracking-wide">SHINING HORIZON TRADING CO.</h1>
-                        <p class="text-primary-dark text-xs" dir="rtl" style="letter-spacing: 0.15em;">شـركـة الأفـق الـمـشـع لـلـتـجـارة</p>
-                    </div>
-                </div>
-                <nav class="hidden lg:flex items-center gap-8">
-                    <a href="index.html" class="text-gray-600 hover:text-primary transition font-medium text-sm">Home</a>
-                    <a href="categories.html" class="text-gray-600 hover:text-primary transition font-medium text-sm">Categories</a>
-                    <a href="index.html#about" class="text-gray-600 hover:text-primary transition font-medium text-sm">About</a>
-                    <a href="index.html#services" class="text-gray-600 hover:text-primary transition font-medium text-sm">Services</a>
-                    <a href="index.html#contact" class="text-gray-600 hover:text-primary transition font-medium text-sm">Contact</a>
-                </nav>
-                <a href="quote.html" class="bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary-dark transition">Get Quote</a>
-            </div>
-        </div>
-    </header>
+<body class="bg-gray-50 pt-16">
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
 
     <!-- Breadcrumb -->
     <div class="bg-white border-b">
@@ -397,5 +377,9 @@
             window.location.href = 'quote.html';
         }
     </script>
+
+    <!-- Load Shared Components -->
+    <script src="components/header.js?v=20241224"></script>
+    <script src="components/footer.js?v=20241224"></script>
 </body>
 </html>

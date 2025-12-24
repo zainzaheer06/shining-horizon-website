@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Brands - Shining Horizon Trading</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2d8bc9',
+                        'primary-dark': '#1a5a8a',
+                        'primary-light': '#5bb5e0',
+                        'accent': '#5bb5e0',
+                        'accent-light': '#8ed0f0',
+                    },
+                    fontFamily: { 'inter': ['Inter', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .brand-card { transition: all 0.3s ease; }
+        .brand-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(45, 139, 201, 0.15); }
+        .brand-logo { transition: all 0.2s ease; }
+        .brand-logo:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-gray-50 pt-16">
+    <div id="header-placeholder"></div>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <nav class="flex text-sm">
+                <a href="index.html" class="text-gray-500 hover:text-primary">Home</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <span class="text-primary font-medium">Our Brands</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-primary to-primary-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">Our Trusted Brands</h1>
+            <p class="text-white/90 text-lg mb-6 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                We partner with world-leading manufacturers to bring you the highest quality industrial equipment and solutions
+            </p>
+            <div class="flex flex-wrap justify-center gap-3" data-aos="fade-up" data-aos-delay="400">
+                <span class="bg-white/10 px-4 py-2 rounded-lg text-sm font-medium">25+ Premium Brands</span>
+                <span class="bg-white/10 px-4 py-2 rounded-lg text-sm font-medium">Authorized Dealers</span>
+                <span class="bg-white/10 px-4 py-2 rounded-lg text-sm font-medium">Genuine Products</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Grid -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Industrial Automation Brands -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2 text-center">Industrial Automation</h2>
+                <p class="text-gray-600 text-center mb-8">Leading automation and control system manufacturers</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Siemens -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" onclick="showBrandProducts('Siemens')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/brand1.png" alt="Siemens" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Siemens</h3>
+                        <p class="text-sm text-gray-600 mb-3">PLCs, VFDs, HMIs, Motors</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+
+                    <!-- ABB -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" data-aos-delay="50" onclick="showBrandProducts('ABB')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/brand2.png" alt="ABB" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">ABB</h3>
+                        <p class="text-sm text-gray-600 mb-3">VFDs, Contactors, Motors</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+
+                    <!-- Schneider Electric -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" data-aos-delay="100" onclick="showBrandProducts('Schneider')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/brand3.png" alt="Schneider Electric" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Schneider Electric</h3>
+                        <p class="text-sm text-gray-600 mb-3">PLCs, HMIs, Contactors</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+
+                    <!-- OMRON -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" data-aos-delay="150" onclick="showBrandProducts('OMRON')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/brand4.png" alt="OMRON" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">OMRON</h3>
+                        <p class="text-sm text-gray-600 mb-3">PLCs, Sensors, Encoders</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+
+                    <!-- Mitsubishi -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" data-aos-delay="200" onclick="showBrandProducts('Mitsubishi')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/brand5.png" alt="Mitsubishi" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Mitsubishi</h3>
+                        <p class="text-sm text-gray-600 mb-3">PLCs, HMIs, Servo Drives</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+
+                    <!-- Danfoss -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" data-aos-delay="250" onclick="showBrandProducts('Danfoss')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/brand6.png" alt="Danfoss" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Danfoss</h3>
+                        <p class="text-sm text-gray-600 mb-3">VFDs, Power Supplies</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+
+                    <!-- Delta -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" data-aos-delay="300" onclick="showBrandProducts('Delta')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/brand7.png" alt="Delta" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Delta</h3>
+                        <p class="text-sm text-gray-600 mb-3">VFDs, Servo Drives</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+
+                    <!-- Weintek -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" data-aos-delay="350" onclick="showBrandProducts('Weintek')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/brand8.png" alt="Weintek" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Weintek</h3>
+                        <p class="text-sm text-gray-600 mb-3">HMIs, Power Supplies</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lifting Equipment Brands -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2 text-center">Lifting Equipment</h2>
+                <p class="text-gray-600 text-center mb-8">Certified lifting and rigging equipment manufacturers</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- KITO -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" onclick="showBrandProducts('KITO')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/kito-logo.png" alt="KITO" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">KITO</h3>
+                        <p class="text-sm text-gray-600 mb-3">Chain Hoists, Wire Rope Hoists</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+
+                    <!-- Yale -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" data-aos-delay="50" onclick="showBrandProducts('Yale')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/yale-logo.png" alt="Yale" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Yale</h3>
+                        <p class="text-sm text-gray-600 mb-3">Chain Hoists, Lever Hoists</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+
+                    <!-- Crosby -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" data-aos-delay="100" onclick="showBrandProducts('Crosby')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/crosby-logo.png" alt="Crosby" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Crosby</h3>
+                        <p class="text-sm text-gray-600 mb-3">Shackles, Hooks, Clamps</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+
+                    <!-- Gunnebo -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" data-aos-delay="150" onclick="showBrandProducts('Gunnebo')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/gunnebo-logo.png" alt="Gunnebo" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Gunnebo</h3>
+                        <p class="text-sm text-gray-600 mb-3">Shackles, Slings, Hooks</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+
+                    <!-- Pewag -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" data-aos-delay="200" onclick="showBrandProducts('Pewag')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/pewag-logo.png" alt="Pewag" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Pewag</h3>
+                        <p class="text-sm text-gray-600 mb-3">Shackles, Slings, Hooks</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+
+                    <!-- Elephant -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" data-aos-delay="250" onclick="showBrandProducts('Elephant')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/elephant-logo.png" alt="Elephant" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Elephant</h3>
+                        <p class="text-sm text-gray-600 mb-3">Chain Hoists, Lever Hoists</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+
+                    <!-- Ingersoll Rand -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" data-aos-delay="300" onclick="showBrandProducts('Ingersoll Rand')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/ingersoll-rand-logo.png" alt="Ingersoll Rand" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Ingersoll Rand</h3>
+                        <p class="text-sm text-gray-600 mb-3">Chain Hoists</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Brands -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2 text-center">Other Brands</h2>
+                <p class="text-gray-600 text-center mb-8">Additional trusted manufacturers we work with</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- IFM -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" onclick="showBrandProducts('IFM')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/brand9.png" alt="IFM" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">IFM</h3>
+                        <p class="text-sm text-gray-600 mb-3">Sensors, Encoders</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+
+                    <!-- Sick -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" data-aos-delay="50" onclick="showBrandProducts('Sick')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/brand10.png" alt="Sick" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Sick</h3>
+                        <p class="text-sm text-gray-600 mb-3">Sensors</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+
+                    <!-- Turck -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" data-aos-delay="100" onclick="showBrandProducts('Turck')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/brand11.png" alt="Turck" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Turck</h3>
+                        <p class="text-sm text-gray-600 mb-3">Sensors</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+
+                    <!-- Yaskawa -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" data-aos-delay="150" onclick="showBrandProducts('Yaskawa')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/brand12.png" alt="Yaskawa" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Yaskawa</h3>
+                        <p class="text-sm text-gray-600 mb-3">Servo Drives</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+
+                    <!-- LS Electric -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" data-aos-delay="200" onclick="showBrandProducts('LS Electric')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/brand13.png" alt="LS Electric" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">LS Electric</h3>
+                        <p class="text-sm text-gray-600 mb-3">Contactors</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+
+                    <!-- Autonics -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" data-aos-delay="250" onclick="showBrandProducts('Autonics')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/brand14.png" alt="Autonics" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Autonics</h3>
+                        <p class="text-sm text-gray-600 mb-3">Encoders</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+
+                    <!-- Eaton -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" data-aos-delay="300" onclick="showBrandProducts('Eaton')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/brand15.png" alt="Eaton" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Eaton</h3>
+                        <p class="text-sm text-gray-600 mb-3">Push Buttons</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+
+                    <!-- Idec -->
+                    <div class="brand-card bg-white rounded-xl shadow-md p-6 text-center cursor-pointer" data-aos="fade-up" data-aos-delay="350" onclick="showBrandProducts('Idec')">
+                        <div class="brand-logo mb-4">
+                            <img src="public/brands/brand16.png" alt="Idec" class="h-16 mx-auto object-contain">
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Idec</h3>
+                        <p class="text-sm text-gray-600 mb-3">Push Buttons</p>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg text-sm hover:bg-primary-dark transition">View Products</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Brand Products Modal -->
+    <div id="brandModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-6 border-b">
+                    <div class="flex justify-between items-center">
+                        <h2 id="modalBrandName" class="text-2xl font-bold text-gray-900"></h2>
+                        <button onclick="closeBrandModal()" class="text-gray-400 hover:text-gray-600">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="modalContent" class="p-6">
+                    <!-- Products will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-primary to-primary-dark py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Can't Find Your Preferred Brand?</h2>
+            <p class="text-white/90 mb-8 max-w-2xl mx-auto">
+                We work with many more manufacturers and can source products from various brands. Contact us for your specific requirements.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="quote.html" class="bg-white text-primary font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition">Request Quote</a>
+                <a href="https://wa.me/966536598520" target="_blank" class="border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white hover:text-primary transition">WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="components/header.js?v=20241224"></script>
+    <script src="components/footer.js?v=20241224"></script>
+    
+    <script>
+        AOS.init({ duration: 600, easing: 'ease-out', once: true });
+
+        // Brand products data with images
+        const brandProducts = {
+            'Siemens': [
+                { name: 'PLC Controllers', category: 'Industrial Automation', image: 'public/products/product1.png' },
+                { name: 'VFD Drives', category: 'Industrial Automation', image: 'public/products/product2.png' },
+                { name: 'HMI Displays', category: 'Industrial Automation', image: 'public/products/product3.png' },
+                { name: 'Servo Drives', category: 'Industrial Automation', image: 'public/products/product5.png' },
+                { name: 'Contactors Relays', category: 'Industrial Automation', image: 'public/products/product6.png' },
+                { name: 'Encoders', category: 'Industrial Automation', image: 'public/products/product7.png' },
+                { name: 'Power Supplies', category: 'Industrial Automation', image: 'public/products/product1.png' }
+            ],
+            'ABB': [
+                { name: 'PLC Controllers', category: 'Industrial Automation' },
+                { name: 'VFD Drives', category: 'Industrial Automation' },
+                { name: 'Contactors Relays', category: 'Industrial Automation' },
+                { name: 'Push Buttons', category: 'Industrial Automation' }
+            ],
+            'Schneider': [
+                { name: 'PLC Controllers', category: 'Industrial Automation' },
+                { name: 'HMI Displays', category: 'Industrial Automation' },
+                { name: 'Contactors Relays', category: 'Industrial Automation' },
+                { name: 'Push Buttons', category: 'Industrial Automation' }
+            ],
+            'OMRON': [
+                { name: 'PLC Controllers', category: 'Industrial Automation' },
+                { name: 'Industrial Sensors', category: 'Industrial Automation' },
+                { name: 'Encoders', category: 'Industrial Automation' }
+            ],
+            'Mitsubishi': [
+                { name: 'PLC Controllers', category: 'Industrial Automation' },
+                { name: 'HMI Displays', category: 'Industrial Automation' },
+                { name: 'Servo Drives', category: 'Industrial Automation' }
+            ],
+            'Danfoss': [
+                { name: 'VFD Drives', category: 'Industrial Automation' }
+            ],
+            'Delta': [
+                { name: 'VFD Drives', category: 'Industrial Automation' },
+                { name: 'Servo Drives', category: 'Industrial Automation' }
+            ],
+            'Weintek': [
+                { name: 'HMI Displays', category: 'Industrial Automation' }
+            ],
+            'KITO': [
+                { name: 'Chain Hoists', category: 'Lifting Equipment' },
+                { name: 'Wire Rope Hoists', category: 'Lifting Equipment' },
+                { name: 'Load Blocks', category: 'Lifting Equipment' },
+                { name: 'Lever Hoists', category: 'Lifting Equipment' }
+            ],
+            'Yale': [
+                { name: 'Chain Hoists', category: 'Lifting Equipment' },
+                { name: 'Wire Rope Hoists', category: 'Lifting Equipment' },
+                { name: 'Lever Hoists', category: 'Lifting Equipment' }
+            ],
+            'Crosby': [
+                { name: 'Shackles', category: 'Lifting Equipment' },
+                { name: 'Lifting Slings', category: 'Lifting Equipment' },
+                { name: 'Lifting Hooks', category: 'Lifting Equipment' },
+                { name: 'Wire Rope Clamps', category: 'Lifting Equipment' },
+                { name: 'Turnbuckles', category: 'Lifting Equipment' },
+                { name: 'Load Blocks', category: 'Lifting Equipment' }
+            ],
+            'Gunnebo': [
+                { name: 'Shackles', category: 'Lifting Equipment' },
+                { name: 'Lifting Slings', category: 'Lifting Equipment' },
+                { name: 'Lifting Hooks', category: 'Lifting Equipment' },
+                { name: 'Wire Rope Clamps', category: 'Lifting Equipment' },
+                { name: 'Turnbuckles', category: 'Lifting Equipment' }
+            ],
+            'Pewag': [
+                { name: 'Shackles', category: 'Lifting Equipment' },
+                { name: 'Lifting Slings', category: 'Lifting Equipment' },
+                { name: 'Lifting Hooks', category: 'Lifting Equipment' }
+            ],
+            'Elephant': [
+                { name: 'Chain Hoists', category: 'Lifting Equipment' },
+                { name: 'Lever Hoists', category: 'Lifting Equipment' }
+            ],
+            'Ingersoll Rand': [
+                { name: 'Chain Hoists', category: 'Lifting Equipment' }
+            ],
+            'IFM': [
+                { name: 'Industrial Sensors', category: 'Industrial Automation' },
+                { name: 'Encoders', category: 'Industrial Automation' }
+            ],
+            'Sick': [
+                { name: 'Industrial Sensors', category: 'Industrial Automation' }
+            ],
+            'Turck': [
+                { name: 'Industrial Sensors', category: 'Industrial Automation' }
+            ],
+            'Yaskawa': [
+                { name: 'Servo Drives', category: 'Industrial Automation' }
+            ],
+            'LS Electric': [
+                { name: 'Contactors Relays', category: 'Industrial Automation' }
+            ],
+            'Autonics': [
+                { name: 'Encoders', category: 'Industrial Automation' }
+            ],
+            'Eaton': [
+                { name: 'Push Buttons', category: 'Industrial Automation' }
+            ],
+            'Idec': [
+                { name: 'Push Buttons', category: 'Industrial Automation' }
+            ],
+            'Mean Well': [
+                { name: 'Power Supplies', category: 'Industrial Automation' }
+            ],
+            'Phoenix': [
+                { name: 'Power Supplies', category: 'Industrial Automation' }
+            ]
+        };
+
+        function showBrandProducts(brandName) {
+            const modal = document.getElementById('brandModal');
+            const modalBrandName = document.getElementById('modalBrandName');
+            const modalContent = document.getElementById('modalContent');
+            
+            modalBrandName.textContent = brandName + ' Products';
+            
+            const products = brandProducts[brandName] || [];
+            
+            if (products.length === 0) {
+                modalContent.innerHTML = `
+                    <div class="text-center py-8">
+                        <p class="text-gray-600 mb-4">No products found for this brand.</p>
+                        <a href="quote.html?brand=${encodeURIComponent(brandName)}" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                `;
+            } else {
+                let productsHTML = `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                `;
+                
+                products.forEach(product => {
+                    // Check if this is Siemens and has image
+                    const hasImage = brandName === 'Siemens' && product.image;
+                    
+                    productsHTML += `
+                        <div class="border border-gray-200 rounded-lg overflow-hidden hover:border-primary transition hover:shadow-lg">
+                            ${hasImage ? `
+                                <div class="h-32 bg-gray-50 flex items-center justify-center p-4">
+                                    <img src="${product.image}" alt="${product.name}" class="max-h-full max-w-full object-contain">
+                                </div>
+                            ` : ''}
+                            <div class="p-4">
+                                <h3 class="font-semibold text-gray-900 mb-1">${product.name}</h3>
+                                <p class="text-sm text-gray-600 mb-3">${product.category}</p>
+                                <a href="quote.html?product=${encodeURIComponent(product.name)}&brand=${encodeURIComponent(brandName)}" 
+                                   class="inline-block bg-primary text-white px-4 py-2 rounded text-sm hover:bg-primary-dark transition">
+                                    Request Quote
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                productsHTML += `
+                    </div>
+                    <div class="text-center border-t pt-6">
+                        <p class="text-gray-600 mb-4">Need a different product from ${brandName}?</p>
+                        <a href="quote.html?brand=${encodeURIComponent(brandName)}" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition">Request Custom Quote</a>
+                    </div>
+                `;
+                
+                modalContent.innerHTML = productsHTML;
+            }
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBrandModal() {
+            const modal = document.getElementById('brandModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('brandModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeBrandModal();
+            }
+        });
+    </script>
+</body>
+</html>

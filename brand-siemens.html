@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siemens Products - Shining Horizon Trading</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2d8bc9',
+                        'primary-dark': '#1a5a8a',
+                        'primary-light': '#5bb5e0',
+                        'accent': '#5bb5e0',
+                        'accent-light': '#8ed0f0',
+                    },
+                    fontFamily: { 'inter': ['Inter', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .product-card { transition: all 0.3s ease; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(45, 139, 201, 0.15); }
+    </style>
+</head>
+<body class="bg-gray-50 pt-16">
+    <div id="header-placeholder"></div>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <nav class="flex text-sm">
+                <a href="index.html" class="text-gray-500 hover:text-primary">Home</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <a href="brands.html" class="text-gray-500 hover:text-primary">Brands</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <span class="text-primary font-medium">Siemens</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-primary to-primary-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <div class="mb-6">
+                        <h1 class="text-4xl md:text-5xl font-bold">Siemens</h1>
+                        <p class="text-white/90 text-lg">Industrial Automation Solutions</p>
+                    </div>
+                    <p class="text-white/90 text-lg mb-6">
+                        Leading global technology company providing innovative automation solutions, 
+                        PLCs, drives, HMIs, and industrial software for manufacturing excellence.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-white/10 px-4 py-2 rounded-lg text-sm font-medium">Global Leader</span>
+                        <span class="bg-white/10 px-4 py-2 rounded-lg text-sm font-medium">Authorized Dealer</span>
+                        <span class="bg-white/10 px-4 py-2 rounded-lg text-sm font-medium">Premium Quality</span>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+                        <img src="public/brands/brand1.png" alt="Siemens Brand" class="w-full max-w-md rounded-lg bg-white p-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Siemens Product Range</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Comprehensive industrial automation solutions from the world's leading technology company
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- PLC Controllers -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 bg-gray-50 flex items-center justify-center p-6">
+                        <img src="public/products/product1.png" alt="Siemens PLC Controllers" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">PLC Controllers</h3>
+                        <p class="text-gray-600 text-sm mb-4">SIMATIC S7 Series - Programmable Logic Controllers</p>
+                        
+                        <div class="space-y-2 mb-6 text-sm">
+                            <div class="flex justify-between"><span class="text-gray-500">Series:</span><span class="font-medium">S7-1200, S7-1500, S7-300</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">I/O Points:</span><span class="font-medium">8 - 2048</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">Memory:</span><span class="font-medium">Up to 8MB</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">Communication:</span><span class="font-medium">PROFINET, Ethernet</span></div>
+                        </div>
+                        
+                        <a href="quote.html?product=PLC Controllers&brand=Siemens" class="block w-full bg-primary text-white text-center py-3 rounded-lg font-medium hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- VFD Drives -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-gray-50 flex items-center justify-center p-6">
+                        <img src="public/products/product2.png" alt="Siemens VFD Drives" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">VFD Drives</h3>
+                        <p class="text-gray-600 text-sm mb-4">SINAMICS Series - Variable Frequency Drives</p>
+                        
+                        <div class="space-y-2 mb-6 text-sm">
+                            <div class="flex justify-between"><span class="text-gray-500">Series:</span><span class="font-medium">G120, G130, V20</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">Power:</span><span class="font-medium">0.37 - 800 kW</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">Voltage:</span><span class="font-medium">230V - 690V</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">Control:</span><span class="font-medium">Vector Control</span></div>
+                        </div>
+                        
+                        <a href="quote.html?product=VFD Drives&brand=Siemens" class="block w-full bg-primary text-white text-center py-3 rounded-lg font-medium hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- HMI Displays -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-gray-50 flex items-center justify-center p-6">
+                        <img src="public/products/product3.png" alt="Siemens HMI Displays" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">HMI Displays</h3>
+                        <p class="text-gray-600 text-sm mb-4">SIMATIC HMI - Human Machine Interface</p>
+                        
+                        <div class="space-y-2 mb-6 text-sm">
+                            <div class="flex justify-between"><span class="text-gray-500">Series:</span><span class="font-medium">KTP, TP, MP</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">Screen:</span><span class="font-medium">4" - 22"</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">Resolution:</span><span class="font-medium">Up to 1920x1080</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">Touch:</span><span class="font-medium">Multi-touch</span></div>
+                        </div>
+                        
+                        <a href="quote.html?product=HMI Displays&brand=Siemens" class="block w-full bg-primary text-white text-center py-3 rounded-lg font-medium hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Servo Drives -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 bg-gray-50 flex items-center justify-center p-6">
+                        <img src="public/products/product5.png" alt="Siemens Servo Drives" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Servo Drives & Motors</h3>
+                        <p class="text-gray-600 text-sm mb-4">SINAMICS S Series - Servo Systems</p>
+                        
+                        <div class="space-y-2 mb-6 text-sm">
+                            <div class="flex justify-between"><span class="text-gray-500">Series:</span><span class="font-medium">S120, S210, V90</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">Power:</span><span class="font-medium">0.1 - 55 kW</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">Control:</span><span class="font-medium">Position/Speed/Torque</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">Feedback:</span><span class="font-medium">Absolute Encoder</span></div>
+                        </div>
+                        
+                        <a href="quote.html?product=Servo Drives&brand=Siemens" class="block w-full bg-primary text-white text-center py-3 rounded-lg font-medium hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Contactors & Relays -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <div class="h-48 bg-gray-50 flex items-center justify-center p-6">
+                        <img src="public/products/product6.png" alt="Siemens Contactors" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Contactors & Relays</h3>
+                        <p class="text-gray-600 text-sm mb-4">SIRIUS Series - Motor Control Components</p>
+                        
+                        <div class="space-y-2 mb-6 text-sm">
+                            <div class="flex justify-between"><span class="text-gray-500">Series:</span><span class="font-medium">3RT, 3RH, 3RU</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">Current:</span><span class="font-medium">9A - 800A</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">Voltage:</span><span class="font-medium">24V - 690V</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">Poles:</span><span class="font-medium">3P / 4P</span></div>
+                        </div>
+                        
+                        <a href="quote.html?product=Contactors Relays&brand=Siemens" class="block w-full bg-primary text-white text-center py-3 rounded-lg font-medium hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Encoders -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+                    <div class="h-48 bg-gray-50 flex items-center justify-center p-6">
+                        <img src="public/products/product7.png" alt="Siemens Encoders" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Encoders</h3>
+                        <p class="text-gray-600 text-sm mb-4">SIMOCODE & Motion Control Encoders</p>
+                        
+                        <div class="space-y-2 mb-6 text-sm">
+                            <div class="flex justify-between"><span class="text-gray-500">Type:</span><span class="font-medium">Incremental/Absolute</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">Resolution:</span><span class="font-medium">100 - 262,144 PPR</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">Output:</span><span class="font-medium">TTL/HTL/SSI</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">Interface:</span><span class="font-medium">PROFINET Ready</span></div>
+                        </div>
+                        
+                        <a href="quote.html?product=Encoders&brand=Siemens" class="block w-full bg-primary text-white text-center py-3 rounded-lg font-medium hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Power Supplies -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+                    <div class="h-48 bg-gray-50 flex items-center justify-center p-6">
+                        <img src="public/products/product1.png" alt="Siemens Power Supplies" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Power Supplies</h3>
+                        <p class="text-gray-600 text-sm mb-4">SITOP Series - Industrial Power Supplies</p>
+                        
+                        <div class="space-y-2 mb-6 text-sm">
+                            <div class="flex justify-between"><span class="text-gray-500">Series:</span><span class="font-medium">PSU100, PSU300</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">Output:</span><span class="font-medium">5V - 48V DC</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">Power:</span><span class="font-medium">10W - 960W</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">Mount:</span><span class="font-medium">DIN Rail</span></div>
+                        </div>
+                        
+                        <a href="quote.html?product=Power Supplies&brand=Siemens" class="block w-full bg-primary text-white text-center py-3 rounded-lg font-medium hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Siemens -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Choose Siemens?</h2>
+                <p class="text-gray-600">Leading technology and innovation in industrial automation</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center" data-aos="fade-up">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Innovation Leader</h3>
+                    <p class="text-gray-600 text-sm">Cutting-edge technology and R&D investment</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Proven Reliability</h3>
+                    <p class="text-gray-600 text-sm">Trusted by industries worldwide for decades</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">High Performance</h3>
+                    <p class="text-gray-600 text-sm">Superior efficiency and productivity gains</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Global Support</h3>
+                    <p class="text-gray-600 text-sm">Comprehensive support and service network</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-primary to-primary-dark py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Ready to Upgrade Your Automation?</h2>
+            <p class="text-white/90 mb-8 max-w-2xl mx-auto">
+                Get expert consultation and competitive pricing on Siemens industrial automation solutions
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="quote.html?brand=Siemens" class="bg-white text-primary font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition">Request Quote</a>
+                <a href="https://wa.me/966536598520" target="_blank" class="border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white hover:text-primary transition">WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="components/header.js?v=20241224"></script>
+    <script src="components/footer.js?v=20241224"></script>
+    
+    <script>
+        AOS.init({ duration: 600, easing: 'ease-out', once: true });
+    </script>
+</body>
+</html>

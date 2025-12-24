@@ -145,33 +145,9 @@
                                 </div>
                             </div>
 
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
-                                    <input type="tel" id="phone" name="phone" required placeholder="+966 XX XXX XXXX" class="w-full p-3 border border-gray-300 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none transition">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-2">Delivery Location</label>
-                                    <input type="text" id="delivery-location" name="delivery-location" placeholder="City, Country" class="w-full p-3 border border-gray-300 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none transition">
-                                </div>
-                            </div>
-
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-2">Required Delivery Date</label>
-                                    <input type="date" id="delivery-date" name="delivery-date" class="w-full p-3 border border-gray-300 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none transition">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-2">Budget Range (USD)</label>
-                                    <select id="budget" name="budget" class="w-full p-3 border border-gray-300 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none transition">
-                                        <option value="">Select Budget Range</option>
-                                        <option value="Under $10,000">Under $10,000</option>
-                                        <option value="$10,000 - $50,000">$10,000 - $50,000</option>
-                                        <option value="$50,000 - $100,000">$50,000 - $100,000</option>
-                                        <option value="$100,000 - $500,000">$100,000 - $500,000</option>
-                                        <option value="Over $500,000">Over $500,000</option>
-                                    </select>
-                                </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="+966 XX XXX XXXX" class="w-full p-3 border border-gray-300 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none transition">
                             </div>
 
                             <div>
@@ -319,14 +295,65 @@
         let currentStep = 1;
         const totalSteps = 2;
 
-        // Load pre-selected data from localStorage
-        window.addEventListener('load', function() {
-            const selectedCategory = localStorage.getItem('selectedCategory');
-            const selectedProduct = localStorage.getItem('selectedProduct');
-            const selectedBrand = localStorage.getItem('selectedBrand');
+        // Get URL parameters
+        function getUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                product: params.get('product'),
+                brand: params.get('brand'),
+                category: params.get('category')
+            };
+        }
 
+        // Auto-detect category from product name
+        function detectCategory(product) {
+            if (!product) return '';
+            const productLower = product.toLowerCase();
+            
+            // Automation products
+            if (productLower.includes('plc') || productLower.includes('vfd') || productLower.includes('hmi') || 
+                productLower.includes('sensor') || productLower.includes('servo') || productLower.includes('contactor') ||
+                productLower.includes('encoder') || productLower.includes('push button') || productLower.includes('power supply')) {
+                return 'Industrial Automation';
+            }
+            // Lifting products
+            if (productLower.includes('hoist') || productLower.includes('shackle') || productLower.includes('sling') ||
+                productLower.includes('hook') || productLower.includes('clamp') || productLower.includes('turnbuckle') ||
+                productLower.includes('block') || productLower.includes('lifting') || productLower.includes('wire rope')) {
+                return 'Lifting Equipment';
+            }
+            // Electrical products
+            if (productLower.includes('cable') || productLower.includes('breaker') || productLower.includes('switch') ||
+                productLower.includes('transformer') || productLower.includes('panel')) {
+                return 'Electrical Products';
+            }
+            return '';
+        }
+
+        // Load pre-selected data from URL parameters or localStorage
+        window.addEventListener('load', function() {
+            const urlParams = getUrlParams();
+            
+            // Priority: URL params > localStorage
+            let selectedProduct = urlParams.product || localStorage.getItem('selectedProduct') || '';
+            let selectedBrand = urlParams.brand || localStorage.getItem('selectedBrand') || '';
+            let selectedCategory = urlParams.category || localStorage.getItem('selectedCategory') || '';
+            
+            // Auto-detect category if not provided
+            if (!selectedCategory && selectedProduct) {
+                selectedCategory = detectCategory(selectedProduct);
+            }
+
+            // Fill the form fields
             if (selectedCategory) {
-                document.getElementById('category').value = selectedCategory;
+                const categorySelect = document.getElementById('category');
+                // Try exact match first
+                for (let option of categorySelect.options) {
+                    if (option.value === selectedCategory) {
+                        categorySelect.value = selectedCategory;
+                        break;
+                    }
+                }
             }
             if (selectedProduct) {
                 document.getElementById('product').value = selectedProduct;
@@ -335,11 +362,45 @@
                 document.getElementById('brand').value = selectedBrand;
             }
 
+            // Show notification if auto-filled
+            if (selectedProduct || selectedBrand) {
+                showAutoFillNotification(selectedProduct, selectedBrand, selectedCategory);
+            }
+
             // Clear localStorage after loading
             localStorage.removeItem('selectedCategory');
             localStorage.removeItem('selectedProduct');
             localStorage.removeItem('selectedBrand');
         });
+
+        // Show notification for auto-filled data
+        function showAutoFillNotification(product, brand, category) {
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-20 right-4 bg-primary text-white px-6 py-4 rounded-lg shadow-lg z-50 max-w-sm';
+            notification.innerHTML = `
+                <div class="flex items-start gap-3">
+                    <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <div>
+                        <p class="font-semibold">Product details auto-filled!</p>
+                        <p class="text-sm text-white/90 mt-1">
+                            ${product ? `<span class="block">Product: ${product}</span>` : ''}
+                            ${brand ? `<span class="block">Brand: ${brand}</span>` : ''}
+                            ${category ? `<span class="block">Category: ${category}</span>` : ''}
+                        </p>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(notification);
+            
+            // Remove notification after 4 seconds
+            setTimeout(() => {
+                notification.style.transition = 'opacity 0.5s';
+                notification.style.opacity = '0';
+                setTimeout(() => notification.remove(), 500);
+            }, 4000);
+        }
 
         function nextStep() {
             if (validateCurrentStep()) {
@@ -406,7 +467,7 @@
                 // Simulate form submission
                 setTimeout(() => {
                     btn.innerHTML = '✓ Quote Request Submitted!';
-                    btn.classList.add('bg-green-500');
+                    btn.classList.add('bg-primary');
                     
                     setTimeout(() => {
                         alert('Thank you! Your quote request has been submitted successfully. We will contact you within 24 hours.');

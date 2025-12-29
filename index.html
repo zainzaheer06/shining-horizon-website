@@ -362,6 +362,108 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
+
+        /* Client Logos Infinite Scroll */
+        .client-scroll-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .client-scroll-container::before,
+        .client-scroll-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 150px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+        
+        .client-scroll-container::before {
+            left: 0;
+            background: linear-gradient(to right, rgb(249, 250, 251), transparent);
+        }
+        
+        .client-scroll-container::after {
+            right: 0;
+            background: linear-gradient(to left, rgb(249, 250, 251), transparent);
+        }
+        
+        .client-scroll-row {
+            display: flex;
+            width: max-content;
+        }
+        
+        .client-scroll-content {
+            display: flex;
+            gap: 3rem;
+            padding: 0 1.5rem;
+        }
+        
+        .client-logo-item {
+            flex-shrink: 0;
+            width: 140px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 12px;
+            padding: 12px 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .client-logo-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(45, 139, 201, 0.15);
+            border-color: rgba(45, 139, 201, 0.2);
+        }
+        
+        .client-logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(30%);
+            opacity: 0.85;
+            transition: all 0.3s ease;
+        }
+        
+        .client-logo-item:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* Scroll Right Animation */
+        .scroll-right {
+            animation: scrollRight 40s linear infinite;
+        }
+        
+        .scroll-right:hover {
+            animation-play-state: paused;
+        }
+        
+        @keyframes scrollRight {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        /* Scroll Left Animation */
+        .scroll-left {
+            animation: scrollLeft 40s linear infinite;
+        }
+        
+        .scroll-left:hover {
+            animation-play-state: paused;
+        }
+        
+        @keyframes scrollLeft {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800">
@@ -424,30 +526,6 @@
                         <span>Contact Sales</span>
                     </a>
                 </div>
-                
-
-                <!-- Trusted By Section in Hero -->
-                <div class="w-full mt-8" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
-                    <div class="py-16 px-4 bg-white/10 backdrop-blur-sm rounded-3xl mx-8 border border-white/20">
-                        <div class="max-w-6xl mx-auto">
-                            <div class="text-center mb-12">
-                                <p class="text-base font-semibold text-gray-700 uppercase tracking-wider">TRUSTED BY</p>
-                            </div>
-                            <!-- Clean single row with 3 logos -->
-                            <div class="flex items-center justify-center gap-16 md:gap-20 lg:gap-24 xl:gap-28">
-                                <div class="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110">
-                                    <img src="public/brands/kito-logo.png" alt="KITO" class="h-10 md:h-11 lg:h-12 w-auto filter grayscale hover:grayscale-0">
-                                </div>
-                                <div class="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110">
-                                    <img src="public/brands/yale-logo.png" alt="Yale" class="h-10 md:h-11 lg:h-12 w-auto filter grayscale hover:grayscale-0">
-                                </div>
-                                <div class="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110">
-                                    <img src="public/brands/crosby-logo.png" alt="Crosby" class="h-10 md:h-11 lg:h-12 w-auto filter grayscale hover:grayscale-0">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         
@@ -460,7 +538,7 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-gradient-to-b from-gray-50 to-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                 <div class="stat-card bg-white rounded-2xl p-8 text-center shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
@@ -474,6 +552,108 @@
                 <div class="stat-card bg-white rounded-2xl p-8 text-center shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
                     <div class="text-4xl md:text-5xl font-black text-primary counter mb-2" data-target="15">0</div>
                     <div class="text-gray-500 text-base font-medium">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Clients Section - Infinite Scroll -->
+    <section class="py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block bg-primary/10 text-primary text-sm font-semibold py-2 px-4 rounded-full mb-4">OUR CLIENTS</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Trusted by <span class="text-primary">Industry Leaders</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We're proud to partner with leading companies across Saudi Arabia and the region</p>
+            </div>
+        </div>
+
+        <!-- Scrolling Logos Container -->
+        <div class="space-y-8">
+            <!-- Row 1 - Scroll Right -->
+            <div class="client-scroll-container">
+                <div class="client-scroll-row scroll-right">
+                    <div class="client-scroll-content">
+                        <div class="client-logo-item"><img src="public/clients/170599688280866068.jpg" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/a-1-fence-india-logo.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/AHQ-Website-Logo-v4.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/brand.svg" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/cropped-LOGO-scaled-1.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/cropped-watinya-steel-logo.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/hitachi-logo-header.svg" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/Logo-01.svg" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/logo-1-300x300.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/logo-company.svg" alt="Client"></div>
+                    </div>
+                    <div class="client-scroll-content">
+                        <div class="client-logo-item"><img src="public/clients/170599688280866068.jpg" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/a-1-fence-india-logo.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/AHQ-Website-Logo-v4.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/brand.svg" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/cropped-LOGO-scaled-1.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/cropped-watinya-steel-logo.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/hitachi-logo-header.svg" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/Logo-01.svg" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/logo-1-300x300.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/logo-company.svg" alt="Client"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2 - Scroll Left -->
+            <div class="client-scroll-container">
+                <div class="client-scroll-row scroll-left">
+                    <div class="client-scroll-content">
+                        <div class="client-logo-item"><img src="public/clients/Logo-H-EN.svg" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/logo-header.svg" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/logo-image.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/logo.svg" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/logo@2x.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/Logo2.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/logo4.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/logo5.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/Napco-National-Logo.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/newlogo.svg" alt="Client"></div>
+                    </div>
+                    <div class="client-scroll-content">
+                        <div class="client-logo-item"><img src="public/clients/Logo-H-EN.svg" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/logo-header.svg" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/logo-image.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/logo.svg" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/logo@2x.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/Logo2.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/logo4.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/logo5.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/Napco-National-Logo.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/newlogo.svg" alt="Client"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3 - Scroll Right -->
+            <div class="client-scroll-container">
+                <div class="client-scroll-row scroll-right">
+                    <div class="client-scroll-content">
+                        <div class="client-logo-item"><img src="public/clients/nfl-logo.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/Rasass.jpg" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/rcg-new.svg" alt="Client" style="width: 80%; height: auto;"></div>
+                        <div class="client-logo-item"><img src="public/clients/rowad-logo.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/saudi-arabia-alfanar-logo.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/tke.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/ip%20logo-01.avif" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/logo%20(1)2.svg" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/logo-sa.avif" alt="Client"></div>
+                    </div>
+                    <div class="client-scroll-content">
+                        <div class="client-logo-item"><img src="public/clients/nfl-logo.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/Rasass.jpg" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/rcg-new.svg" alt="Client" style="width: 80%; height: auto;"></div>
+                        <div class="client-logo-item"><img src="public/clients/rowad-logo.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/saudi-arabia-alfanar-logo.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/tke.png" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/ip%20logo-01.avif" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/logo%20(1)2.svg" alt="Client"></div>
+                        <div class="client-logo-item"><img src="public/clients/logo-sa.avif" alt="Client"></div>
+                    </div>
                 </div>
             </div>
         </div>

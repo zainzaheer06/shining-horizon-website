@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools - Shining Horizon Trading</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="components/shared-styles.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2d8bc9',
+                        'primary-dark': '#1a5a8a',
+                        'primary-light': '#5bb5e0',
+                    },
+                    fontFamily: { 'inter': ['Inter', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .product-card { transition: all 0.3s ease; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(45, 139, 201, 0.15); }
+    </style>
+</head>
+<body class="bg-gray-50 pt-16">
+    <div id="header-placeholder"></div>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <nav class="flex text-sm">
+                <a href="index.html" class="text-gray-500 hover:text-primary">Home</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <a href="categories.html" class="text-gray-500 hover:text-primary">Categories</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <span class="text-primary font-medium">Tools</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-primary to-primary-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Tools</h1>
+                    <p class="text-white/90 text-lg mb-6">Complete range of hand tools, power tools, and industrial equipment for professionals and DIY enthusiasts.</p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-white/10 px-4 py-2 rounded-lg text-sm font-medium">Hand Tools</span>
+                        <span class="bg-white/10 px-4 py-2 rounded-lg text-sm font-medium">Power Tools</span>
+                        <span class="bg-white/10 px-4 py-2 rounded-lg text-sm font-medium">Industrial Grade</span>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <img src="public/categories/tools.webp" alt="Tools" class="w-full max-w-lg rounded-2xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Our Tools Collection</h2>
+                <p class="text-gray-600">Browse our complete range of professional tools</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+
+                <!-- Wrenches -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product1.png" alt="Wrenches" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Wrenches</h3>
+                        <p class="text-gray-500 text-sm mb-3">Combination, adjustable, and specialty wrenches for all applications.</p>
+                        <a href="quote.html?product=Wrenches&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Spirit Level -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="25">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product2.png" alt="Spirit Level" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Spirit Level</h3>
+                        <p class="text-gray-500 text-sm mb-3">Precision levels for accurate horizontal and vertical alignment.</p>
+                        <a href="quote.html?product=Spirit Level&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Nails -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="50">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product3.png" alt="Nails" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Nails</h3>
+                        <p class="text-gray-500 text-sm mb-3">Various sizes and types of nails for construction and woodworking.</p>
+                        <a href="quote.html?product=Nails&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Allen Key -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="75">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product4.png" alt="Allen Key" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Allen Key</h3>
+                        <p class="text-gray-500 text-sm mb-3">Hex key sets in metric and imperial sizes for fastener applications.</p>
+                        <a href="quote.html?product=Allen Key&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Paint Brush -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product5.png" alt="Paint Brush" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Paint Brush</h3>
+                        <p class="text-gray-500 text-sm mb-3">Professional paint brushes in various sizes for smooth finishes.</p>
+                        <a href="quote.html?product=Paint Brush&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Tester -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="25">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product6.png" alt="Tester" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Tester</h3>
+                        <p class="text-gray-500 text-sm mb-3">Electrical testers and voltage detectors for safe testing.</p>
+                        <a href="quote.html?product=Tester&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Tools Belt -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="50">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product7.png" alt="Tools Belt" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Tools Belt</h3>
+                        <p class="text-gray-500 text-sm mb-3">Heavy-duty tool belts and pouches for hands-free work.</p>
+                        <a href="quote.html?product=Tools Belt&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Cordless Drill -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="75">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product8.png" alt="Cordless Drill" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Cordless Drill</h3>
+                        <p class="text-gray-500 text-sm mb-3">Battery-powered drills with variable speed and torque settings.</p>
+                        <a href="quote.html?product=Cordless Drill&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Plier -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product1.png" alt="Plier" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Plier</h3>
+                        <p class="text-gray-500 text-sm mb-3">Combination, needle-nose, and locking pliers for gripping tasks.</p>
+                        <a href="quote.html?product=Plier&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Hand Drill -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="25">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product2.png" alt="Hand Drill" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Hand Drill</h3>
+                        <p class="text-gray-500 text-sm mb-3">Manual hand drills for precision drilling without power.</p>
+                        <a href="quote.html?product=Hand Drill&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Pipe Wrenches -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="50">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product3.png" alt="Pipe Wrenches" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Pipe Wrenches</h3>
+                        <p class="text-gray-500 text-sm mb-3">Heavy-duty pipe wrenches for plumbing and pipework.</p>
+                        <a href="quote.html?product=Pipe Wrenches&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Chisel -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="75">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product4.png" alt="Chisel" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Chisel</h3>
+                        <p class="text-gray-500 text-sm mb-3">Wood and cold chisels for carving and cutting applications.</p>
+                        <a href="quote.html?product=Chisel&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Bolt Cutter -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product5.png" alt="Bolt Cutter" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Bolt Cutter</h3>
+                        <p class="text-gray-500 text-sm mb-3">Heavy-duty bolt cutters for cutting chains, bolts, and padlocks.</p>
+                        <a href="quote.html?product=Bolt Cutter&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Soldering Iron -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="25">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product6.png" alt="Soldering Iron" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Soldering Iron</h3>
+                        <p class="text-gray-500 text-sm mb-3">Electric soldering irons for electronics and metalwork.</p>
+                        <a href="quote.html?product=Soldering Iron&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Drills -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="50">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product7.png" alt="Drills" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Drills</h3>
+                        <p class="text-gray-500 text-sm mb-3">Electric drills, hammer drills, and impact drills.</p>
+                        <a href="quote.html?product=Drills&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Compressor -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="75">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product8.png" alt="Compressor" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Compressor</h3>
+                        <p class="text-gray-500 text-sm mb-3">Air compressors for pneumatic tools and inflation.</p>
+                        <a href="quote.html?product=Compressor&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- HSS Hole Saw -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product1.png" alt="HSS Hole Saw" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">HSS Hole Saw</h3>
+                        <p class="text-gray-500 text-sm mb-3">High-speed steel hole saws for cutting circular holes.</p>
+                        <a href="quote.html?product=HSS Hole Saw&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Sand Paper -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="25">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product2.png" alt="Sand Paper" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Sand Paper</h3>
+                        <p class="text-gray-500 text-sm mb-3">Various grits of sandpaper for smoothing and finishing.</p>
+                        <a href="quote.html?product=Sand Paper&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Cutting Disc -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="50">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product3.png" alt="Cutting Disc" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Cutting Disc</h3>
+                        <p class="text-gray-500 text-sm mb-3">Abrasive cutting discs for metal and masonry cutting.</p>
+                        <a href="quote.html?product=Cutting Disc&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Grinding Disc -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="75">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product4.png" alt="Grinding Disc" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Grinding Disc</h3>
+                        <p class="text-gray-500 text-sm mb-3">Grinding wheels for metal finishing and sharpening.</p>
+                        <a href="quote.html?product=Grinding Disc&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Tool Boxes -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product5.png" alt="Tool Boxes" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Tool Boxes</h3>
+                        <p class="text-gray-500 text-sm mb-3">Portable and stationary tool storage solutions.</p>
+                        <a href="quote.html?product=Tool Boxes&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Ratchet Set -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="25">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product6.png" alt="Ratchet Set" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Ratchet Set</h3>
+                        <p class="text-gray-500 text-sm mb-3">Socket and ratchet sets for automotive and mechanical work.</p>
+                        <a href="quote.html?product=Ratchet Set&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Drywall Anchor -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="50">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product7.png" alt="Drywall Anchor" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Drywall Anchor</h3>
+                        <p class="text-gray-500 text-sm mb-3">Wall anchors for secure mounting in drywall.</p>
+                        <a href="quote.html?product=Drywall Anchor&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Mallet -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="75">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product8.png" alt="Mallet" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Mallet</h3>
+                        <p class="text-gray-500 text-sm mb-3">Rubber and wooden mallets for non-marring strikes.</p>
+                        <a href="quote.html?product=Mallet&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Hack Saw -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product1.png" alt="Hack Saw" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Hack Saw</h3>
+                        <p class="text-gray-500 text-sm mb-3">Metal cutting hand saws with replaceable blades.</p>
+                        <a href="quote.html?product=Hack Saw&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Wood Cutting Blade -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="25">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product2.png" alt="Wood Cutting Blade" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Wood Cutting Blade</h3>
+                        <p class="text-gray-500 text-sm mb-3">Circular saw blades for clean wood cutting.</p>
+                        <a href="quote.html?product=Wood Cutting Blade&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Shovel -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="50">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product3.png" alt="Shovel" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Shovel</h3>
+                        <p class="text-gray-500 text-sm mb-3">Digging and transfer shovels for construction work.</p>
+                        <a href="quote.html?product=Shovel&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Swing Saw -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="75">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product4.png" alt="Swing Saw" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Swing Saw</h3>
+                        <p class="text-gray-500 text-sm mb-3">Pivot arm saws for precise crosscuts.</p>
+                        <a href="quote.html?product=Swing Saw&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Metal Cutting Blade -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product5.png" alt="Metal Cutting Blade" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Metal Cutting Blade</h3>
+                        <p class="text-gray-500 text-sm mb-3">Abrasive blades for cutting metal and steel.</p>
+                        <a href="quote.html?product=Metal Cutting Blade&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Knives -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="25">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product6.png" alt="Knives" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Knives</h3>
+                        <p class="text-gray-500 text-sm mb-3">Utility knives, box cutters, and specialty blades.</p>
+                        <a href="quote.html?product=Knives&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Chain Saw -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="50">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product7.png" alt="Chain Saw" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Chain Saw</h3>
+                        <p class="text-gray-500 text-sm mb-3">Gas and electric chainsaws for tree cutting.</p>
+                        <a href="quote.html?product=Chain Saw&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Hatchet -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="75">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product8.png" alt="Hatchet" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Hatchet</h3>
+                        <p class="text-gray-500 text-sm mb-3">Hand axes for chopping and splitting wood.</p>
+                        <a href="quote.html?product=Hatchet&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Circular Saw -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product1.png" alt="Circular Saw" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Circular Saw</h3>
+                        <p class="text-gray-500 text-sm mb-3">Power saws for straight cuts in wood and metal.</p>
+                        <a href="quote.html?product=Circular Saw&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Nail Gun -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="25">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product2.png" alt="Nail Gun" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Nail Gun</h3>
+                        <p class="text-gray-500 text-sm mb-3">Pneumatic and cordless nailers for fast fastening.</p>
+                        <a href="quote.html?product=Nail Gun&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Screw Drivers -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="50">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product3.png" alt="Screw Drivers" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Screw Drivers</h3>
+                        <p class="text-gray-500 text-sm mb-3">Phillips, flathead, and precision screwdriver sets.</p>
+                        <a href="quote.html?product=Screw Drivers&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Ladders -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="75">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product4.png" alt="Ladders" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Ladders</h3>
+                        <p class="text-gray-500 text-sm mb-3">Step ladders, extension ladders, and scaffolding.</p>
+                        <a href="quote.html?product=Ladders&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Welding Machines -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product5.png" alt="Welding Machines" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Welding Machines</h3>
+                        <p class="text-gray-500 text-sm mb-3">MIG, TIG, and arc welding equipment.</p>
+                        <a href="quote.html?product=Welding Machines&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Trolley -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="25">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product6.png" alt="Trolley" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Trolley</h3>
+                        <p class="text-gray-500 text-sm mb-3">Hand trucks and platform trolleys for material handling.</p>
+                        <a href="quote.html?product=Trolley&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Measuring Meters -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="50">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product7.png" alt="Measuring Meters" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Measuring Meters</h3>
+                        <p class="text-gray-500 text-sm mb-3">Tape measures, laser meters, and measuring wheels.</p>
+                        <a href="quote.html?product=Measuring Meters&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Clamps -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="75">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product8.png" alt="Clamps" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Clamps</h3>
+                        <p class="text-gray-500 text-sm mb-3">C-clamps, bar clamps, and quick-grip clamps.</p>
+                        <a href="quote.html?product=Clamps&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Adjustable Spanners -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product1.png" alt="Adjustable Spanners" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Adjustable Spanners</h3>
+                        <p class="text-gray-500 text-sm mb-3">Adjustable wrenches in various sizes.</p>
+                        <a href="quote.html?product=Adjustable Spanners&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Trimmer -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="25">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product2.png" alt="Trimmer" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Trimmer</h3>
+                        <p class="text-gray-500 text-sm mb-3">String trimmers and edge trimmers for landscaping.</p>
+                        <a href="quote.html?product=Trimmer&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Hex Key -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="50">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product3.png" alt="Hex Key" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Hex Key</h3>
+                        <p class="text-gray-500 text-sm mb-3">L-shaped hex keys in metric and imperial sizes.</p>
+                        <a href="quote.html?product=Hex Key&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Scrapper -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="75">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product4.png" alt="Scrapper" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Scrapper</h3>
+                        <p class="text-gray-500 text-sm mb-3">Paint scrapers and putty knives for surface prep.</p>
+                        <a href="quote.html?product=Scrapper&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Hammer -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product5.png" alt="Hammer" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Hammer</h3>
+                        <p class="text-gray-500 text-sm mb-3">Claw hammers, ball peen, and sledge hammers.</p>
+                        <a href="quote.html?product=Hammer&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Screws, Nuts & Washers -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="25">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product6.png" alt="Screws Nuts Washers" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Screws, Nuts & Washers</h3>
+                        <p class="text-gray-500 text-sm mb-3">Complete fastener sets in various sizes and materials.</p>
+                        <a href="quote.html?product=Screws Nuts Washers&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Welding Spare Parts -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="50">
+                    <div class="h-40 overflow-hidden bg-gray-100">
+                        <img src="public/products/product7.png" alt="Welding Spare Parts" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Welding Spare Parts</h3>
+                        <p class="text-gray-500 text-sm mb-3">Electrodes, tips, nozzles, and welding accessories.</p>
+                        <a href="quote.html?product=Welding Spare Parts&category=Tools" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-primary to-primary-dark py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl font-bold text-white mb-3">Need Tools for Your Project?</h2>
+            <p class="text-white/90 mb-6 max-w-xl mx-auto">Contact us for competitive pricing on all tools and equipment</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="quote.html?category=Tools" class="bg-white text-primary font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition">Request Quote</a>
+                <a href="https://wa.me/966536598520" target="_blank" class="border-2 border-white text-white font-semibold py-3 px-6 rounded-lg hover:bg-white hover:text-primary transition">WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="components/header.js?v=20241224"></script>
+    <script src="components/footer.js?v=20241224"></script>
+    <script>AOS.init({ duration: 600, easing: 'ease-out', once: true });</script>
+</body>
+</html>

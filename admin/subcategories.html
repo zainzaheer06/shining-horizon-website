@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subcategories - Shining Horizon Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">Shining <span>Horizon</span></div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>Dashboard</a>
+            <div class="nav-section">Catalog</div>
+            <a href="categories.html" class="nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>Categories</a>
+            <a href="subcategories.html" class="nav-item active"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>Subcategories</a>
+            <a href="products.html" class="nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>Products</a>
+            <a href="brands.html" class="nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>Brands</a>
+            <div class="nav-section">System</div>
+            <a href="users.html" class="nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>Users</a>
+            <a href="#" class="nav-item" onclick="authAPI.logout()"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>Logout</a>
+        </nav>
+    </aside>
+    
+    <main class="main-content">
+        <header class="header">
+            <div class="header-left"><h1 class="header-title">Subcategories</h1></div>
+            <div class="header-right">
+                <div class="user-menu">
+                    <div class="user-avatar">A</div>
+                    <div class="user-info"><div class="user-name">Admin</div><div class="user-role">Super Admin</div></div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="page-content">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">All Subcategories</h3>
+                    <button class="btn btn-primary" onclick="openAddModal()">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                        Add Subcategory
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="filters">
+                        <select id="filter-category" class="filter-select" onchange="loadSubcategories()">
+                            <option value="">All Categories</option>
+                        </select>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>Products</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="subcategories-table">
+                                <tr><td colspan="5"><div class="loading"><div class="spinner"></div></div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Modal -->
+    <div class="modal-overlay" id="subcategory-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title">Add Subcategory</h3>
+                <button class="modal-close" onclick="closeModal('subcategory-modal')">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <form id="subcategory-form" onsubmit="saveSubcategory(event)">
+                <div class="modal-body">
+                    <input type="hidden" name="id" id="subcategory-id">
+                    
+                    <div class="form-group">
+                        <label class="form-label">Category *</label>
+                        <select name="category_id" id="modal-category" class="form-select" required></select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Name *</label>
+                        <input type="text" name="name" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Description</label>
+                        <textarea name="description" class="form-textarea"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Display Order</label>
+                        <input type="number" name="display_order" class="form-input" value="0">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label"><input type="checkbox" name="is_active" checked> Active</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('subcategory-modal')">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div id="toast-container" class="toast-container"></div>
+    
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script>
+        if (!requireAuth()) {}
+        
+        let categories = [];
+        let subcategories = [];
+        
+        document.addEventListener('DOMContentLoaded', async () => {
+            initUserInfo();
+            await loadCategories();
+            await loadSubcategories();
+        });
+        
+        async function loadCategories() {
+            categories = await categoriesAPI.getAll(true);
+            // Only show detailed categories (they have subcategories)
+            const detailedCategories = categories.filter(c => c.type === 'detailed');
+            
+            const filterSelect = document.getElementById('filter-category');
+            filterSelect.innerHTML = '<option value="">All Categories</option>' + 
+                detailedCategories.map(c => `<option value="${c.id}">${escapeHtml(c.name)}</option>`).join('');
+            
+            const modalSelect = document.getElementById('modal-category');
+            modalSelect.innerHTML = '<option value="">Select Category</option>' + 
+                detailedCategories.map(c => `<option value="${c.id}">${escapeHtml(c.name)}</option>`).join('');
+        }
+        
+        async function loadSubcategories() {
+            const categoryId = document.getElementById('filter-category').value || null;
+            subcategories = await subcategoriesAPI.getAll(categoryId, true);
+            renderSubcategories();
+        }
+        
+        function renderSubcategories() {
+            const tbody = document.getElementById('subcategories-table');
+            
+            if (subcategories.length === 0) {
+                showEmptyState(tbody, 'No subcategories found');
+                return;
+            }
+            
+            tbody.innerHTML = subcategories.map(sub => `
+                <tr>
+                    <td><strong>${escapeHtml(sub.name)}</strong><br><small style="color: #64748b;">${sub.slug}</small></td>
+                    <td>${escapeHtml(sub.category_name || '-')}</td>
+                    <td>${sub.product_count || 0}</td>
+                    <td><span class="badge ${sub.is_active ? 'badge-success' : 'badge-danger'}">${sub.is_active ? 'Active' : 'Inactive'}</span></td>
+                    <td>
+                        <div class="table-actions">
+                            <button class="btn btn-sm btn-secondary" onclick="editSubcategory(${sub.id})">Edit</button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteSubcategory(${sub.id})">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+        
+        function openAddModal() {
+            document.getElementById('modal-title').textContent = 'Add Subcategory';
+            resetForm('subcategory-form');
+            document.getElementById('subcategory-id').value = '';
+            openModal('subcategory-modal');
+        }
+        
+        function editSubcategory(id) {
+            const sub = subcategories.find(s => s.id === id);
+            if (!sub) return;
+            
+            document.getElementById('modal-title').textContent = 'Edit Subcategory';
+            document.getElementById('subcategory-id').value = sub.id;
+            fillForm('subcategory-form', sub);
+            openModal('subcategory-modal');
+        }
+        
+        async function saveSubcategory(e) {
+            e.preventDefault();
+            const id = document.getElementById('subcategory-id').value;
+            const data = getFormData('subcategory-form');
+            delete data.id;
+            
+            try {
+                if (id) {
+                    await subcategoriesAPI.update(id, data);
+                    showToast('Subcategory updated');
+                } else {
+                    await subcategoriesAPI.create(data);
+                    showToast('Subcategory created');
+                }
+                closeModal('subcategory-modal');
+                await loadSubcategories();
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        }
+        
+        async function deleteSubcategory(id) {
+            if (!await confirmDialog('Delete this subcategory?')) return;
+            try {
+                await subcategoriesAPI.delete(id);
+                showToast('Subcategory deleted');
+                await loadSubcategories();
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        }
+    </script>
+</body>
+</html>

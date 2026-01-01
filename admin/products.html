@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Shining Horizon Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header"><div class="sidebar-logo">Shining <span>Horizon</span></div></div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>Dashboard</a>
+            <div class="nav-section">Catalog</div>
+            <a href="categories.html" class="nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>Categories</a>
+            <a href="subcategories.html" class="nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>Subcategories</a>
+            <a href="products.html" class="nav-item active"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>Products</a>
+            <a href="brands.html" class="nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>Brands</a>
+            <div class="nav-section">System</div>
+            <a href="users.html" class="nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>Users</a>
+            <a href="#" class="nav-item" onclick="authAPI.logout()"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>Logout</a>
+        </nav>
+    </aside>
+    
+    <main class="main-content">
+        <header class="header">
+            <div class="header-left"><h1 class="header-title">Products</h1></div>
+            <div class="header-right">
+                <div class="user-menu">
+                    <div class="user-avatar">A</div>
+                    <div class="user-info"><div class="user-name">Admin</div><div class="user-role">Super Admin</div></div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="page-content">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">All Products</h3>
+                    <button class="btn btn-primary" onclick="openAddModal()">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                        Add Product
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="filters">
+                        <select id="filter-category" class="filter-select" onchange="onCategoryChange()">
+                            <option value="">All Categories</option>
+                        </select>
+                        <select id="filter-subcategory" class="filter-select" onchange="loadProducts()">
+                            <option value="">All Subcategories</option>
+                        </select>
+                        <select id="filter-brand" class="filter-select" onchange="loadProducts()">
+                            <option value="">All Brands</option>
+                        </select>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Name / Part Number</th>
+                                    <th>Category</th>
+                                    <th>Brand</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="products-table">
+                                <tr><td colspan="6"><div class="loading"><div class="spinner"></div></div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Modal -->
+    <div class="modal-overlay" id="product-modal">
+        <div class="modal" style="max-width: 700px;">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title">Add Product</h3>
+                <button class="modal-close" onclick="closeModal('product-modal')">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <form id="product-form" onsubmit="saveProduct(event)">
+                <div class="modal-body">
+                    <input type="hidden" name="id" id="product-id">
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <div class="form-group">
+                            <label class="form-label">Category *</label>
+                            <select name="category_id" id="modal-category" class="form-select" required onchange="onModalCategoryChange()"></select>
+                        </div>
+                        
+                        <div class="form-group" id="subcategory-group">
+                            <label class="form-label">Subcategory</label>
+                            <select name="subcategory_id" id="modal-subcategory" class="form-select"></select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Product Name *</label>
+                        <input type="text" name="name" class="form-input" required>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <div class="form-group">
+                            <label class="form-label">Part Number</label>
+                            <input type="text" name="part_number" class="form-input" placeholder="For detailed categories">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Brand</label>
+                            <select name="brand_id" id="modal-brand" class="form-select"></select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Short Description</label>
+                        <input type="text" name="short_description" class="form-input" placeholder="For simple category cards">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Full Description</label>
+                        <textarea name="description" class="form-textarea" placeholder="Detailed product description"></textarea>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <div class="form-group">
+                            <label class="form-label">Display Order</label>
+                            <input type="number" name="display_order" class="form-input" value="0">
+                        </div>
+                        
+                        <div class="form-group" style="display: flex; flex-direction: column; justify-content: flex-end;">
+                            <label class="form-label"><input type="checkbox" name="is_active" checked> Active</label>
+                            <label class="form-label" style="margin-top: 8px;"><input type="checkbox" name="is_featured"> Featured</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('product-modal')">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div id="toast-container" class="toast-container"></div>
+    
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script>
+        if (!requireAuth()) {}
+        
+        let categories = [];
+        let subcategories = [];
+        let brands = [];
+        let products = [];
+        
+        document.addEventListener('DOMContentLoaded', async () => {
+            initUserInfo();
+            await Promise.all([loadCategories(), loadBrands()]);
+            await loadProducts();
+        });
+        
+        async function loadCategories() {
+            categories = await categoriesAPI.getAll(true);
+            
+            const filterSelect = document.getElementById('filter-category');
+            filterSelect.innerHTML = '<option value="">All Categories</option>' + 
+                categories.map(c => `<option value="${c.id}">${escapeHtml(c.name)}</option>`).join('');
+            
+            const modalSelect = document.getElementById('modal-category');
+            modalSelect.innerHTML = '<option value="">Select Category</option>' + 
+                categories.map(c => `<option value="${c.id}">${escapeHtml(c.name)} (${c.type})</option>`).join('');
+        }
+        
+        async function loadBrands() {
+            brands = await brandsAPI.getAll(true);
+            
+            const filterSelect = document.getElementById('filter-brand');
+            filterSelect.innerHTML = '<option value="">All Brands</option>' + 
+                brands.map(b => `<option value="${b.id}">${escapeHtml(b.name)}</option>`).join('');
+            
+            const modalSelect = document.getElementById('modal-brand');
+            modalSelect.innerHTML = '<option value="">No Brand</option>' + 
+                brands.map(b => `<option value="${b.id}">${escapeHtml(b.name)}</option>`).join('');
+        }
+        
+        async function onCategoryChange() {
+            const categoryId = document.getElementById('filter-category').value;
+            const subcatSelect = document.getElementById('filter-subcategory');
+            
+            if (categoryId) {
+                const category = categories.find(c => c.id == categoryId);
+                if (category && category.type === 'detailed') {
+                    subcategories = await subcategoriesAPI.getAll(categoryId, true);
+                    subcatSelect.innerHTML = '<option value="">All Subcategories</option>' + 
+                        subcategories.map(s => `<option value="${s.id}">${escapeHtml(s.name)}</option>`).join('');
+                    subcatSelect.style.display = 'block';
+                } else {
+                    subcatSelect.style.display = 'none';
+                    subcatSelect.value = '';
+                }
+            } else {
+                subcatSelect.innerHTML = '<option value="">All Subcategories</option>';
+            }
+            
+            await loadProducts();
+        }
+        
+        async function onModalCategoryChange() {
+            const categoryId = document.getElementById('modal-category').value;
+            const subcatGroup = document.getElementById('subcategory-group');
+            const subcatSelect = document.getElementById('modal-subcategory');
+            
+            if (categoryId) {
+                const category = categories.find(c => c.id == categoryId);
+                if (category && category.type === 'detailed') {
+                    const subs = await subcategoriesAPI.getAll(categoryId, true);
+                    subcatSelect.innerHTML = '<option value="">Select Subcategory</option>' + 
+                        subs.map(s => `<option value="${s.id}">${escapeHtml(s.name)}</option>`).join('');
+                    subcatGroup.style.display = 'block';
+                } else {
+                    subcatGroup.style.display = 'none';
+                    subcatSelect.value = '';
+                }
+            } else {
+                subcatGroup.style.display = 'none';
+            }
+        }
+        
+        async function loadProducts() {
+            const filters = {
+                categoryId: document.getElementById('filter-category').value || null,
+                subcategoryId: document.getElementById('filter-subcategory').value || null,
+                brandId: document.getElementById('filter-brand').value || null,
+            };
+            
+            products = await productsAPI.getAll(filters);
+            renderProducts();
+        }
+        
+        function renderProducts() {
+            const tbody = document.getElementById('products-table');
+            
+            if (products.length === 0) {
+                showEmptyState(tbody, 'No products found');
+                return;
+            }
+            
+            tbody.innerHTML = products.map(p => `
+                <tr>
+                    <td>
+                        ${p.image 
+                            ? `<img src="../${p.image}" class="image-preview" alt="">`
+                            : '<div class="image-preview" style="background: #f1f5f9; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 10px;">No img</div>'
+                        }
+                    </td>
+                    <td>
+                        <strong>${escapeHtml(p.name)}</strong>
+                        ${p.part_number ? `<br><small style="color: #64748b;">${escapeHtml(p.part_number)}</small>` : ''}
+                    </td>
+                    <td>
+                        ${escapeHtml(p.category_name || '-')}
+                        ${p.subcategory_name ? `<br><small style="color: #64748b;">${escapeHtml(p.subcategory_name)}</small>` : ''}
+                    </td>
+                    <td>${escapeHtml(p.brand_name || '-')}</td>
+                    <td><span class="badge ${p.is_active ? 'badge-success' : 'badge-danger'}">${p.is_active ? 'Active' : 'Inactive'}</span></td>
+                    <td>
+                        <div class="table-actions">
+                            <button class="btn btn-sm btn-secondary" onclick="editProduct(${p.id})">Edit</button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteProduct(${p.id})">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+        
+        function openAddModal() {
+            document.getElementById('modal-title').textContent = 'Add Product';
+            resetForm('product-form');
+            document.getElementById('product-id').value = '';
+            document.getElementById('subcategory-group').style.display = 'none';
+            openModal('product-modal');
+        }
+        
+        async function editProduct(id) {
+            const p = products.find(prod => prod.id === id);
+            if (!p) return;
+            
+            document.getElementById('modal-title').textContent = 'Edit Product';
+            document.getElementById('product-id').value = p.id;
+            
+            // Set category first, then load subcategories
+            document.getElementById('modal-category').value = p.category_id;
+            await onModalCategoryChange();
+            
+            fillForm('product-form', p);
+            openModal('product-modal');
+        }
+        
+        async function saveProduct(e) {
+            e.preventDefault();
+            const id = document.getElementById('product-id').value;
+            const data = getFormData('product-form');
+            delete data.id;
+            
+            // Clean up empty values
+            if (!data.subcategory_id) delete data.subcategory_id;
+            if (!data.brand_id) delete data.brand_id;
+            
+            try {
+                if (id) {
+                    await productsAPI.update(id, data);
+                    showToast('Product updated');
+                } else {
+                    await productsAPI.create(data);
+                    showToast('Product created');
+                }
+                closeModal('product-modal');
+                await loadProducts();
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        }
+        
+        async function deleteProduct(id) {
+            if (!await confirmDialog('Delete this product?')) return;
+            try {
+                await productsAPI.delete(id);
+                showToast('Product deleted');
+                await loadProducts();
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        }
+    </script>
+</body>
+</html>

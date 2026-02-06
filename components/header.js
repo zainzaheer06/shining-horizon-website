@@ -18,9 +18,9 @@ function loadHeader() {
                 <nav class="hidden lg:flex items-center gap-8">
                     <a href="${isHomePage ? '#home' : 'index.html'}" class="text-gray-600 hover:text-primary transition font-medium text-sm">Home</a>
                     <a href="${isHomePage ? '#about' : 'index.html#about'}" class="text-gray-600 hover:text-primary transition font-medium text-sm">About</a>
+                    <a href="products.html" class="text-gray-600 hover:text-primary transition font-medium text-sm">Products</a>
                     <a href="categories.html" class="text-gray-600 hover:text-primary transition font-medium text-sm">Categories</a>
                     <a href="brands.html" class="text-gray-600 hover:text-primary transition font-medium text-sm">Brands</a>
-                    <a href="${isHomePage ? '#products' : 'index.html#products'}" class="text-gray-600 hover:text-primary transition font-medium text-sm">Products</a>
                     <a href="${isHomePage ? '#services' : 'index.html#services'}" class="text-gray-600 hover:text-primary transition font-medium text-sm">Services</a>
                     <a href="${isHomePage ? '#contact' : 'index.html#contact'}" class="text-gray-600 hover:text-primary transition font-medium text-sm">Contact</a>
                 </nav>
@@ -43,9 +43,9 @@ function loadHeader() {
                 <nav class="flex flex-col gap-6">
                     <a href="${isHomePage ? '#home' : 'index.html'}" class="text-xl font-semibold text-gray-700 hover:text-primary">Home</a>
                     <a href="${isHomePage ? '#about' : 'index.html#about'}" class="text-xl font-semibold text-gray-700 hover:text-primary">About</a>
+                    <a href="products.html" class="text-xl font-semibold text-gray-700 hover:text-primary">Products</a>
                     <a href="categories.html" class="text-xl font-semibold text-gray-700 hover:text-primary">Categories</a>
                     <a href="brands.html" class="text-xl font-semibold text-gray-700 hover:text-primary">Brands</a>
-                    <a href="${isHomePage ? '#products' : 'index.html#products'}" class="text-xl font-semibold text-gray-700 hover:text-primary">Products</a>
                     <a href="${isHomePage ? '#services' : 'index.html#services'}" class="text-xl font-semibold text-gray-700 hover:text-primary">Services</a>
                     <a href="${isHomePage ? '#contact' : 'index.html#contact'}" class="text-xl font-semibold text-gray-700 hover:text-primary">Contact</a>
                     <a href="quote.html" class="text-xl font-semibold text-primary">Get Quote</a>

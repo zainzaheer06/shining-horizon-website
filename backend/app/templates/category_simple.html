@@ -1,8 +1,38 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category.name }} - Shining Horizon Trading</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="components/shared-styles.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2d8bc9',
+                        'primary-dark': '#1a5a8a',
+                        'primary-light': '#5bb5e0',
+                    },
+                    fontFamily: { 'inter': ['Inter', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .product-card { transition: all 0.3s ease; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(45, 139, 201, 0.15); }
+    </style>
+</head>
+<body class="bg-gray-50 pt-16">
+    <div id="header-placeholder"></div>
 
-{% block title %}{{ category.name }} - Shining Horizon Trading{% endblock %}
-
-{% block content %}
     <!-- Breadcrumb -->
     <div class="bg-white border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -22,7 +52,14 @@
             <div class="grid md:grid-cols-2 gap-10 items-center">
                 <div>
                     <h1 class="text-4xl md:text-5xl font-bold mb-4">{{ category.hero_title or category.name }}</h1>
-                    <p class="text-white/90 text-lg mb-6">{{ category.hero_description or category.description }}</p>
+                    <p class="text-white/90 text-lg mb-6">{{ category.hero_description or category.description or '' }}</p>
+                    {% if category.tags %}
+                    <div class="flex flex-wrap gap-3">
+                        {% for tag in category.tags %}
+                        <span class="bg-white/10 px-4 py-2 rounded-lg text-sm font-medium">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
                 </div>
                 <div class="flex justify-center">
                     {% if category.image %}
@@ -38,20 +75,24 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
                 <h2 class="text-2xl font-bold text-gray-900 mb-2">Our {{ category.name }} Collection</h2>
-                <p class="text-gray-600">Browse our complete range of products</p>
+                <p class="text-gray-600">Browse our complete range of professional products</p>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
                 {% for product in products %}
-                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="{{ loop.index0 % 4 * 25 }}">
-                    {% if product.image %}
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="{{ (loop.index0 % 4) * 25 }}">
                     <div class="h-40 overflow-hidden bg-gray-100">
+                        {% if product.image %}
                         <img src="{{ product.image }}" alt="{{ product.name }}" class="w-full h-full object-cover">
+                        {% else %}
+                        <div class="w-full h-full flex items-center justify-center bg-gray-100">
+                            <span class="text-gray-400 text-4xl font-bold">{{ product.name[0] }}</span>
+                        </div>
+                        {% endif %}
                     </div>
-                    {% endif %}
                     <div class="p-5">
                         <h3 class="text-base font-bold text-gray-900 mb-1">{{ product.name }}</h3>
-                        <p class="text-gray-500 text-sm mb-3">{{ product.short_description or product.description[:100] }}</p>
+                        <p class="text-gray-500 text-sm mb-3">{{ product.short_description or '' }}</p>
                         <a href="quote.html?product={{ product.name | urlencode }}&category={{ category.name | urlencode }}" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition">Request Quote</a>
                     </div>
                 </div>
@@ -60,7 +101,7 @@
         </div>
     </section>
 
-    <!-- Brands Section -->
+    <!-- Brands We Deal In -->
     {% if brands %}
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -95,4 +136,10 @@
             </div>
         </div>
     </section>
-{% endblock %}
+
+    <div id="footer-placeholder"></div>
+    <script src="components/header.js?v=20241224"></script>
+    <script src="components/footer.js?v=20241224"></script>
+    <script>AOS.init({ duration: 600, easing: 'ease-out', once: true });</script>
+</body>
+</html>

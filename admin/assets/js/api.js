@@ -255,3 +255,78 @@ const generatorAPI = {
     
     generateCategory: (id) => apiRequest(`/generate/category/${id}`, { method: 'POST' }),
 };
+
+// Import API
+const importAPI = {
+    importCategories: async (file) => {
+        const formData = new FormData();
+        formData.append('file', file);
+        
+        const token = getToken();
+        const response = await fetch(`${API_BASE}/import/categories`, {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${token}` },
+            body: formData,
+        });
+        
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.detail || 'Import failed');
+        }
+        return response.json();
+    },
+    
+    importSubcategories: async (file) => {
+        const formData = new FormData();
+        formData.append('file', file);
+        
+        const token = getToken();
+        const response = await fetch(`${API_BASE}/import/subcategories`, {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${token}` },
+            body: formData,
+        });
+        
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.detail || 'Import failed');
+        }
+        return response.json();
+    },
+    
+    importBrands: async (file) => {
+        const formData = new FormData();
+        formData.append('file', file);
+        
+        const token = getToken();
+        const response = await fetch(`${API_BASE}/import/brands`, {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${token}` },
+            body: formData,
+        });
+        
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.detail || 'Import failed');
+        }
+        return response.json();
+    },
+    
+    importProducts: async (file) => {
+        const formData = new FormData();
+        formData.append('file', file);
+        
+        const token = getToken();
+        const response = await fetch(`${API_BASE}/import/products`, {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${token}` },
+            body: formData,
+        });
+        
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.detail || 'Import failed');
+        }
+        return response.json();
+    },
+};

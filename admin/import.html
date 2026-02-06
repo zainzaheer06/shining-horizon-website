@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import Data - Shining Horizon Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header"><div class="sidebar-logo">Shining <span>Horizon</span></div></div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>Dashboard</a>
+            <div class="nav-section">Catalog</div>
+            <a href="categories.html" class="nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>Categories</a>
+            <a href="subcategories.html" class="nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>Subcategories</a>
+            <a href="products.html" class="nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>Products</a>
+            <a href="brands.html" class="nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>Brands</a>
+            <a href="import.html" class="nav-item active"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>Import Data</a>
+            <div class="nav-section">System</div>
+            <a href="users.html" class="nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>Users</a>
+            <a href="#" class="nav-item" onclick="authAPI.logout()"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>Logout</a>
+        </nav>
+    </aside>
+    
+    <main class="main-content">
+        <header class="header">
+            <div class="header-left"><h1 class="header-title">Import Data</h1></div>
+            <div class="header-right">
+                <div class="user-menu">
+                    <div class="user-avatar">A</div>
+                    <div class="user-info"><div class="user-name">Admin</div><div class="user-role">Super Admin</div></div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="page-content">
+            <!-- Instructions -->
+            <div class="card" style="margin-bottom: 24px;">
+                <div class="card-header">
+                    <h3 class="card-title">Import Instructions</h3>
+                </div>
+                <div class="card-body">
+                    <p style="color: #64748b; margin-bottom: 16px;">Import data from CSV files. Follow the order below for best results:</p>
+                    <ol style="color: #64748b; padding-left: 20px; line-height: 1.8;">
+                        <li><strong>Brands</strong> - Import first (no dependencies)</li>
+                        <li><strong>Categories</strong> - Import second</li>
+                        <li><strong>Subcategories</strong> - Import third (requires categories)</li>
+                        <li><strong>Products</strong> - Import last (requires categories, subcategories, brands)</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Import Cards Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+                
+                <!-- Brands Import -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">1. Import Brands</h3>
+                    </div>
+                    <div class="card-body">
+                        <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 16px;">CSV columns: <code>name, display_order</code></p>
+                        <div class="form-group">
+                            <input type="file" id="brands-file" accept=".csv" class="form-input">
+                        </div>
+                        <button class="btn btn-primary" onclick="importBrands()" style="width: 100%;">Import Brands</button>
+                        <div id="brands-result" style="margin-top: 12px; font-size: 0.875rem;"></div>
+                    </div>
+                </div>
+
+                <!-- Categories Import -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">2. Import Categories</h3>
+                    </div>
+                    <div class="card-body">
+                        <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 16px;">CSV columns: <code>name, type, description, hero_title, hero_description, display_order</code></p>
+                        <p style="color: #64748b; font-size: 0.75rem; margin-bottom: 16px;">Type: <code>simple</code> or <code>detailed</code></p>
+                        <div class="form-group">
+                            <input type="file" id="categories-file" accept=".csv" class="form-input">
+                        </div>
+                        <button class="btn btn-primary" onclick="importCategories()" style="width: 100%;">Import Categories</button>
+                        <div id="categories-result" style="margin-top: 12px; font-size: 0.875rem;"></div>
+                    </div>
+                </div>
+
+                <!-- Subcategories Import -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">3. Import Subcategories</h3>
+                    </div>
+                    <div class="card-body">
+                        <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 16px;">CSV columns: <code>category_name, name, description, display_order</code></p>
+                        <div class="form-group">
+                            <input type="file" id="subcategories-file" accept=".csv" class="form-input">
+                        </div>
+                        <button class="btn btn-primary" onclick="importSubcategories()" style="width: 100%;">Import Subcategories</button>
+                        <div id="subcategories-result" style="margin-top: 12px; font-size: 0.875rem;"></div>
+                    </div>
+                </div>
+
+                <!-- Products Import -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">4. Import Products</h3>
+                    </div>
+                    <div class="card-body">
+                        <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 16px;">CSV columns: <code>category_name, subcategory_name, brand_name, name, part_number, short_description, description, display_order</code></p>
+                        <div class="form-group">
+                            <input type="file" id="products-file" accept=".csv" class="form-input">
+                        </div>
+                        <button class="btn btn-primary" onclick="importProducts()" style="width: 100%;">Import Products</button>
+                        <div id="products-result" style="margin-top: 12px; font-size: 0.875rem;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Download Templates -->
+            <div class="card" style="margin-top: 24px;">
+                <div class="card-header">
+                    <h3 class="card-title">Download CSV Templates</h3>
+                </div>
+                <div class="card-body" style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button class="btn btn-secondary" onclick="downloadTemplate('brands')">Brands Template</button>
+                    <button class="btn btn-secondary" onclick="downloadTemplate('categories')">Categories Template</button>
+                    <button class="btn btn-secondary" onclick="downloadTemplate('subcategories')">Subcategories Template</button>
+                    <button class="btn btn-secondary" onclick="downloadTemplate('products')">Products Template</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <div id="toast-container" class="toast-container"></div>
+    
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script>
+        if (!requireAuth()) {}
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            initUserInfo();
+        });
+        
+        async function importBrands() {
+            const file = document.getElementById('brands-file').files[0];
+            if (!file) { showToast('Please select a file', 'error'); return; }
+            
+            const resultDiv = document.getElementById('brands-result');
+            resultDiv.innerHTML = '<span style="color: #64748b;">Importing...</span>';
+            
+            try {
+                const result = await importAPI.importBrands(file);
+                resultDiv.innerHTML = `<span style="color: #22c55e;">✓ Created: ${result.created}, Updated: ${result.updated}</span>`;
+                if (result.errors.length > 0) {
+                    resultDiv.innerHTML += `<br><span style="color: #f59e0b;">Warnings: ${result.errors.length}</span>`;
+                }
+                showToast('Brands imported successfully');
+            } catch (error) {
+                resultDiv.innerHTML = `<span style="color: #dc2626;">✗ ${error.message}</span>`;
+                showToast(error.message, 'error');
+            }
+        }
+        
+        async function importCategories() {
+            const file = document.getElementById('categories-file').files[0];
+            if (!file) { showToast('Please select a file', 'error'); return; }
+            
+            const resultDiv = document.getElementById('categories-result');
+            resultDiv.innerHTML = '<span style="color: #64748b;">Importing...</span>';
+            
+            try {
+                const result = await importAPI.importCategories(file);
+                resultDiv.innerHTML = `<span style="color: #22c55e;">✓ Created: ${result.created}, Updated: ${result.updated}</span>`;
+                if (result.errors.length > 0) {
+                    resultDiv.innerHTML += `<br><span style="color: #f59e0b;">Warnings: ${result.errors.length}</span>`;
+                }
+                showToast('Categories imported successfully');
+            } catch (error) {
+                resultDiv.innerHTML = `<span style="color: #dc2626;">✗ ${error.message}</span>`;
+                showToast(error.message, 'error');
+            }
+        }
+        
+        async function importSubcategories() {
+            const file = document.getElementById('subcategories-file').files[0];
+            if (!file) { showToast('Please select a file', 'error'); return; }
+            
+            const resultDiv = document.getElementById('subcategories-result');
+            resultDiv.innerHTML = '<span style="color: #64748b;">Importing...</span>';
+            
+            try {
+                const result = await importAPI.importSubcategories(file);
+                resultDiv.innerHTML = `<span style="color: #22c55e;">✓ Created: ${result.created}, Updated: ${result.updated}</span>`;
+                if (result.errors.length > 0) {
+                    resultDiv.innerHTML += `<br><span style="color: #f59e0b;">Warnings: ${result.errors.length}</span>`;
+                }
+                showToast('Subcategories imported successfully');
+            } catch (error) {
+                resultDiv.innerHTML = `<span style="color: #dc2626;">✗ ${error.message}</span>`;
+                showToast(error.message, 'error');
+            }
+        }
+        
+        async function importProducts() {
+            const file = document.getElementById('products-file').files[0];
+            if (!file) { showToast('Please select a file', 'error'); return; }
+            
+            const resultDiv = document.getElementById('products-result');
+            resultDiv.innerHTML = '<span style="color: #64748b;">Importing...</span>';
+            
+            try {
+                const result = await importAPI.importProducts(file);
+                resultDiv.innerHTML = `<span style="color: #22c55e;">✓ Created: ${result.created}, Updated: ${result.updated}</span>`;
+                if (result.errors.length > 0) {
+                    resultDiv.innerHTML += `<br><span style="color: #f59e0b;">Warnings: ${result.errors.length}</span>`;
+                }
+                showToast('Products imported successfully');
+            } catch (error) {
+                resultDiv.innerHTML = `<span style="color: #dc2626;">✗ ${error.message}</span>`;
+                showToast(error.message, 'error');
+            }
+        }
+        
+        function downloadTemplate(type) {
+            const templates = {
+                brands: 'name,display_order\nSiemens,1\nABB,2\nSchneider,3',
+                categories: 'name,type,description,hero_title,hero_description,display_order\nIndustrial Automation,detailed,PLCs VFDs HMIs & More,Industrial Automation,Complete range of automation products,1\nTools,simple,Hand & Power Tools,Tools,Professional tools collection,2',
+                subcategories: 'category_name,name,description,display_order\nIndustrial Automation,PLC Controllers,Programmable Logic Controllers,1\nIndustrial Automation,VFDs,Variable Frequency Drives,2',
+                products: 'category_name,subcategory_name,brand_name,name,part_number,short_description,description,display_order\nIndustrial Automation,PLC Controllers,Siemens,Siemens S7-1200,6ES7214-1AG40-0XB0,,SIMATIC S7-1200 CPU 1214C,1\nTools,,,Wrenches,,Combination wrenches,Various sizes available,1'
+            };
+            
+            const blob = new Blob([templates[type]], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${type}_template.csv`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

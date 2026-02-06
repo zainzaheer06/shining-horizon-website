@@ -13,7 +13,8 @@ from .routers import (
     brands_router,
     products_router,
     upload_router,
-    generator_router
+    generator_router,
+    import_router
 )
 
 # Create database tables
@@ -47,6 +48,7 @@ app.include_router(brands_router)
 app.include_router(products_router)
 app.include_router(upload_router)
 app.include_router(generator_router)
+app.include_router(import_router)
 
 @app.get("/")
 def root():

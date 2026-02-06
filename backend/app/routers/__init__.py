@@ -6,3 +6,4 @@ from .brands import router as brands_router
 from .products import router as products_router
 from .upload import router as upload_router
 from .generator import router as generator_router
+from .import_data import router as import_router

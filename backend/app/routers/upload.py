@@ -23,7 +23,7 @@ async def upload_image(
     current_user: User = Depends(get_current_user)
 ):
     # Validate folder
-    valid_folders = ["products", "categories", "brands"]
+    valid_folders = ["products", "categories", "brands", "subcategories"]
     if folder not in valid_folders:
         raise HTTPException(status_code=400, detail=f"Invalid folder. Must be one of: {valid_folders}")
     

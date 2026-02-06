@@ -62,6 +62,7 @@ class SubcategoryService:
             slug=slug,
             category_id=subcategory_data.category_id,
             description=subcategory_data.description,
+            image=subcategory_data.image,
             display_order=subcategory_data.display_order,
             is_active=subcategory_data.is_active
         )

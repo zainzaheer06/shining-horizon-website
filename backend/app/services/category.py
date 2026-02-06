@@ -51,6 +51,7 @@ class CategoryService:
             description=category_data.description,
             hero_title=category_data.hero_title,
             hero_description=category_data.hero_description,
+            image=category_data.image,
             display_order=category_data.display_order,
             is_active=category_data.is_active,
             show_on_home=category_data.show_on_home

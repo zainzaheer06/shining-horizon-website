@@ -143,6 +143,20 @@
                     </div>
                     
                     <div class="form-group">
+                        <label class="form-label">Category Image</label>
+                        <div class="image-upload" onclick="document.getElementById('image-input').click()">
+                            <input type="file" id="image-input" accept="image/*" onchange="handleImageUpload(this)">
+                            <div id="image-preview">
+                                <svg width="40" height="40" fill="none" stroke="#9ca3af" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                                <p style="margin-top: 8px; color: #64748b; font-size: 0.875rem;">Click to upload image</p>
+                            </div>
+                        </div>
+                        <input type="hidden" name="image" id="image-path">
+                    </div>
+                    
+                    <div class="form-group">
                         <label class="form-label">Display Order</label>
                         <input type="number" name="display_order" class="form-input" value="0">
                     </div>
@@ -225,6 +239,13 @@
             document.getElementById('modal-title').textContent = 'Add Category';
             resetForm('category-form');
             document.getElementById('category-id').value = '';
+            document.getElementById('image-path').value = '';
+            document.getElementById('image-preview').innerHTML = `
+                <svg width="40" height="40" fill="none" stroke="#9ca3af" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                <p style="margin-top: 8px; color: #64748b; font-size: 0.875rem;">Click to upload image</p>
+            `;
             openModal('category-modal');
         }
         
@@ -234,6 +255,20 @@
             
             document.getElementById('modal-title').textContent = 'Edit Category';
             document.getElementById('category-id').value = cat.id;
+            document.getElementById('image-path').value = cat.image || '';
+            
+            const preview = document.getElementById('image-preview');
+            if (cat.image) {
+                preview.innerHTML = `<img src="../${cat.image}" style="max-width: 100%; max-height: 150px; border-radius: 8px;">`;
+            } else {
+                preview.innerHTML = `
+                    <svg width="40" height="40" fill="none" stroke="#9ca3af" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <p style="margin-top: 8px; color: #64748b; font-size: 0.875rem;">Click to upload image</p>
+                `;
+            }
+            
             fillForm('category-form', cat);
             openModal('category-modal');
         }
@@ -244,6 +279,12 @@
             const id = document.getElementById('category-id').value;
             const data = getFormData('category-form');
             delete data.id;
+            
+            // Add image path if uploaded
+            const imagePath = document.getElementById('image-path').value;
+            if (imagePath) {
+                data.image = imagePath;
+            }
             
             try {
                 if (id) {
@@ -258,6 +299,24 @@
                 await loadCategories();
             } catch (error) {
                 showToast(error.message, 'error');
+            }
+        }
+        
+        async function handleImageUpload(input) {
+            const file = input.files[0];
+            if (!file) return;
+            
+            const preview = document.getElementById('image-preview');
+            preview.innerHTML = '<div class="spinner"></div>';
+            
+            try {
+                const result = await uploadAPI.uploadImage(file, 'categories');
+                document.getElementById('image-path').value = result.path;
+                preview.innerHTML = `<img src="../${result.path}" style="max-width: 100%; max-height: 150px; border-radius: 8px;">`;
+                showToast('Image uploaded');
+            } catch (error) {
+                preview.innerHTML = `<p style="color: #dc2626;">Upload failed: ${error.message}</p>`;
+                showToast('Upload failed', 'error');
             }
         }
         

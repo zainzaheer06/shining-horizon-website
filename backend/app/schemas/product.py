@@ -15,7 +15,7 @@ class ProductBase(BaseModel):
     is_featured: bool = False
 
 class ProductCreate(ProductBase):
-    pass
+    image: Optional[str] = None
 
 class ProductUpdate(BaseModel):
     name: Optional[str] = None

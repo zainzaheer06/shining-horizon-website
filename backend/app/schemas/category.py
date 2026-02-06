@@ -14,7 +14,7 @@ class CategoryBase(BaseModel):
     show_on_home: bool = True
 
 class CategoryCreate(CategoryBase):
-    pass
+    image: Optional[str] = None
 
 class CategoryUpdate(BaseModel):
     name: Optional[str] = None

@@ -25,6 +25,7 @@ function loadFooter() {
                     <ul class="space-y-3 text-sm">
                         <li><a href="index.html" class="text-gray-400 hover:text-primary-light transition">Home</a></li>
                         <li><a href="index.html#about" class="text-gray-400 hover:text-primary-light transition">About Us</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-primary-light transition">All Products</a></li>
                         <li><a href="categories.html" class="text-gray-400 hover:text-primary-light transition">Categories</a></li>
                         <li><a href="index.html#services" class="text-gray-400 hover:text-primary-light transition">Services</a></li>
                         <li><a href="index.html#contact" class="text-gray-400 hover:text-primary-light transition">Contact</a></li>
@@ -48,10 +49,10 @@ function loadFooter() {
                 <div>
                     <h4 class="font-semibold text-white mb-5 text-sm uppercase tracking-wider">Products</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="category-automation.html" class="text-gray-400 hover:text-primary-light transition">Industrial Automation</a></li>
-                        <li><a href="category-electrical.html" class="text-gray-400 hover:text-primary-light transition">Electrical Products</a></li>
-                        <li><a href="category-lifting.html" class="text-gray-400 hover:text-primary-light transition">Lifting Equipment</a></li>
-                        <li><a href="categories.html" class="text-gray-400 hover:text-primary-light transition">Safety & PPE</a></li>
+                        <li><a href="category-industrial-automation.html" class="text-gray-400 hover:text-primary-light transition">Industrial Automation</a></li>
+                        <li><a href="category-electrical-products.html" class="text-gray-400 hover:text-primary-light transition">Electrical Products</a></li>
+                        <li><a href="category-pneumatic-products.html" class="text-gray-400 hover:text-primary-light transition">Pneumatic Products</a></li>
+                        <li><a href="category-tools.html" class="text-gray-400 hover:text-primary-light transition">Tools & Equipment</a></li>
                         <li><a href="categories.html" class="text-gray-400 hover:text-primary-light transition">View All Categories</a></li>
                     </ul>
                 </div>

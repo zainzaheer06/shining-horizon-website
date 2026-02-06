@@ -8,7 +8,7 @@ class BrandBase(BaseModel):
     is_active: bool = True
 
 class BrandCreate(BrandBase):
-    pass
+    logo: Optional[str] = None
 
 class BrandUpdate(BaseModel):
     name: Optional[str] = None

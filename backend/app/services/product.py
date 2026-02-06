@@ -96,6 +96,7 @@ class ProductService:
             part_number=product_data.part_number,
             description=product_data.description,
             short_description=product_data.short_description,
+            image=product_data.image,
             display_order=product_data.display_order,
             is_active=product_data.is_active,
             is_featured=product_data.is_featured

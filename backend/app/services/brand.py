@@ -46,6 +46,7 @@ class BrandService:
         brand = Brand(
             name=brand_data.name,
             slug=slug,
+            logo=brand_data.logo,
             display_order=brand_data.display_order,
             is_active=brand_data.is_active
         )

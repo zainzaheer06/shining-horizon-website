@@ -10,7 +10,7 @@ class SubcategoryBase(BaseModel):
     is_active: bool = True
 
 class SubcategoryCreate(SubcategoryBase):
-    pass
+    image: Optional[str] = None
 
 class SubcategoryUpdate(BaseModel):
     name: Optional[str] = None

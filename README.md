@@ -92,4 +92,4 @@ Complete industrial trading company website with product categories, detailed pr
 ## Browser Support
 - Chrome, Firefox, Safari, Edge
 - Mobile browsers (iOS Safari, Chrome Mobile)
-- Responsive breakpoints: sm, md, lg, xl
+- Responsive breakpoints: sm, md, lg, xl# shining-horizon-website

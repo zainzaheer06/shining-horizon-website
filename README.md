@@ -1,95 +1,147 @@
 # Shining Horizon Trading Website
 
-## Overview
-Complete industrial trading company website with product categories, detailed product pages, and quote request system.
+Industrial trading company website with a dynamic frontend, admin dashboard, and FastAPI backend.
 
-## New Features Added
+---
 
-### 1. Category Pages System
-- **Main Categories Page** (`categories.html`) - Overview of all product categories
-- **Individual Category Pages** - Detailed pages for each category with products and brands
-- **Product Detail Pages** - Comprehensive product information with specifications
+## Prerequisites
 
-### 2. Lifting Equipment Category
-- New category added with 8 different product types
-- Detailed specifications and capacity information
-- Weight capacity ranges from 0.5 to 50+ tons
-- Professional brands like Kito, Elephant, Crosby, etc.
+- Python 3.10+
+- pip
 
-### 3. Quote Request System
-- **Multi-step Quote Form** (`quote.html`)
-- Step 1: Product Information
-- Step 2: Company Information  
-- Step 3: Project Details
-- Pre-populated data when coming from product/brand pages
+---
 
-### 4. Enhanced Navigation
-- Updated main navigation to include Categories
-- Breadcrumb navigation on all pages
-- Mobile-responsive design
+## Installation
 
-## File Structure
-
-```
-├── index.html                 # Main homepage
-├── categories.html           # All categories overview
-├── category-lifting.html     # Lifting equipment category
-├── product-chain-hoist.html  # Chain hoist product details
-├── quote.html               # Quote request form
-└── public/
-    ├── logo/
-    ├── categories/
-    ├── products/
-    └── brands/
+```bash
+cd SHINING-HORIZON-Website
+pip install -r backend/requirements.txt
 ```
 
-## How It Works
-
-### Category Flow
-1. **Homepage** → Click category → **Category Page**
-2. **Category Page** → Click product → **Product Detail Page**
-3. **Product Page** → Click brand → **Quote Page** (pre-filled)
-
-### Quote Request Flow
-1. User can access quote form from any page
-2. Form pre-populates with selected product/brand/category
-3. Multi-step form collects comprehensive information
-4. Form submission sends detailed quote request
-
-### Brand Selection
-- Each category shows trusted brands
-- Clicking brand redirects to quote form with pre-selected data
-- Quote form includes brand, category, and product information
-
-## Key Features
-
-### Lifting Equipment Specifications
-- **Chain Hoists**: 0.5-20 ton capacity, 3-12m lift height
-- **Wire Rope Hoists**: 1-50 ton capacity, 6-30m lift height  
-- **Shackles**: 0.33-150 ton WLL, stainless steel
-- **Complete specifications table** with dimensions and weights
-
-### Responsive Design
-- Mobile-first approach
-- Touch-friendly navigation
-- Optimized images and loading
-- AOS animations for smooth experience
+---
 
 ## Running the Website
 
-1. Start HTTP server: `python -m http.server 8000`
-2. Open browser: `http://localhost:8000`
-3. Navigate through categories and products
-4. Test quote request functionality
+The site requires **two servers** running at the same time — open two terminal windows.
+
+### Terminal 1 — Backend API (port 8001)
+
+```bash
+cd backend
+uvicorn app.main:app --host 0.0.0.0 --port 8001 --reload
+```
+
+The API will be available at `http://localhost:8001`
+
+### Terminal 2 — Frontend Server (port 8000)
+
+```bash
+cd SHINING-HORIZON-Website
+python server.py
+```
+
+The website will be available at `http://localhost:8000`
+
+---
+
+## Accessing the Site
+
+| Page | URL |
+|------|-----|
+| Homepage | http://localhost:8000 |
+| Categories | http://localhost:8000/categories |
+| Products | http://localhost:8000/products |
+| Brands | http://localhost:8000/brands |
+| Quote Request | http://localhost:8000/quote |
+| Admin Dashboard | http://localhost:8000/admin/ |
+
+### Category & Product URLs
+
+```
+http://localhost:8000/category/<slug>
+http://localhost:8000/product/<slug>
+```
+
+Example: `http://localhost:8000/category/industrial-automation`
+
+---
+
+## Admin Dashboard
+
+Go to `http://localhost:8000/admin/`
+
+Default login credentials:
+- **Username:** `admin`
+- **Password:** `admin123`
+
+From the admin panel you can manage:
+- Categories and Subcategories
+- Products and Brands
+- Import data via CSV
+- User accounts
+
+---
+
+## Project Structure
+
+```
+SHINING-HORIZON-Website/
+├── server.py                  # Custom frontend server with clean URL routing
+├── index.html                 # Homepage
+├── categories.html            # Categories listing
+├── products.html              # Products listing
+├── brands.html                # Brands listing
+├── quote.html                 # Quote request form
+├── category-dynamic.html      # Dynamic category page (served at /category/<slug>)
+├── product-dynamic.html       # Dynamic product page (served at /product/<slug>)
+├── components/
+│   ├── header.js              # Shared header component
+│   ├── footer.js              # Shared footer component
+│   └── shared-styles.css      # Shared CSS
+├── admin/
+│   ├── index.html             # Admin dashboard
+│   ├── categories.html
+│   ├── subcategories.html
+│   ├── products.html
+│   ├── brands.html
+│   ├── users.html
+│   └── import.html
+└── backend/
+    ├── main.py
+    ├── requirements.txt
+    ├── shining_horizon.db      # SQLite database
+    ├── uploads/               # Uploaded images
+    └── app/
+        ├── routers/           # API route handlers
+        ├── models/            # SQLAlchemy models
+        ├── schemas/           # Pydantic schemas
+        └── services/          # Business logic
+```
+
+---
 
 ## Technical Stack
-- **Frontend**: HTML5, Tailwind CSS, JavaScript
-- **Animations**: AOS (Animate On Scroll)
-- **Icons**: Heroicons (SVG)
-- **Fonts**: Inter (Google Fonts)
-- **Server**: Python HTTP Server (development)
 
-## Browser Support
-- Chrome, Firefox, Safari, Edge
-- Mobile browsers (iOS Safari, Chrome Mobile)
-- Responsive breakpoints: sm, md, lg, xl# shining-horizon-website
+| Layer | Technology |
+|-------|-----------|
+| Frontend | HTML5, Tailwind CSS, Vanilla JavaScript |
+| Backend | FastAPI, SQLAlchemy, SQLite |
+| Auth | JWT tokens |
+| Animations | AOS (Animate On Scroll) |
+| Fonts | Inter (Google Fonts) |
+| Frontend Server | Python `http.server` with custom routing |
+
+---
+
+## URL Routing
+
+The custom `server.py` handles clean URLs:
+
+| Request | Serves |
+|---------|--------|
+| `/` | `index.html` |
+| `/categories` | `categories.html` |
+| `/admin/products` | `admin/products.html` |
+| `/category/air-treatment` | `category-dynamic.html?slug=air-treatment` |
+| `/product/circuit-breakers` | `product-circuit-breakers.html` (static) or `product-dynamic.html` |
+| Any `*.html` URL | Redirects to clean URL automatically |

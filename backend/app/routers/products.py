@@ -10,6 +10,47 @@ from ..models.user import User
 
 router = APIRouter(prefix="/products", tags=["Products"])
 
+@router.get("/public")
+def get_public_products(
+    category_slug: Optional[str] = Query(None),
+    subcategory_slug: Optional[str] = Query(None),
+    db: Session = Depends(get_db)
+):
+    """Public endpoint — no auth required. Filter by category or subcategory slug."""
+    from ..models.product import Product
+    from ..models.category import Category
+    from ..models.subcategory import Subcategory
+    from ..models.brand import Brand
+
+    query = db.query(Product).filter(Product.is_active == True)
+
+    if category_slug:
+        cat = db.query(Category).filter(Category.slug == category_slug).first()
+        if not cat:
+            return []  # slug not found — return empty, don't leak all products
+        query = query.filter(Product.category_id == cat.id)
+
+    if subcategory_slug:
+        sub = db.query(Subcategory).filter(Subcategory.slug == subcategory_slug).first()
+        if not sub:
+            return []
+        query = query.filter(Product.subcategory_id == sub.id)
+
+    products = query.order_by(Product.display_order).all()
+
+    result = []
+    for p in products:
+        brand = db.query(Brand).filter(Brand.id == p.brand_id).first() if p.brand_id else None
+        sub = db.query(Subcategory).filter(Subcategory.id == p.subcategory_id).first() if p.subcategory_id else None
+        result.append({
+            "id": p.id, "name": p.name, "slug": p.slug,
+            "part_number": p.part_number, "description": p.description,
+            "short_description": p.short_description, "image": p.image,
+            "brand_name": brand.name if brand else None,
+            "subcategory_name": sub.name if sub else None,
+        })
+    return result
+
 @router.get("/", response_model=List[ProductResponse])
 def get_products(
     category_id: Optional[int] = Query(None),

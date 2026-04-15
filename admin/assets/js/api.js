@@ -1,5 +1,5 @@
 // API Configuration and Helper Functions
-const API_BASE = 'http://localhost:8000';
+const API_BASE = 'http://localhost:8001';
 
 // Get stored token
 function getToken() {
@@ -36,7 +36,7 @@ function isLoggedIn() {
 // Redirect to login if not authenticated
 function requireAuth() {
     if (!isLoggedIn()) {
-        window.location.href = 'login.html';
+        window.location.href = 'login';
         return false;
     }
     return true;
@@ -45,15 +45,20 @@ function requireAuth() {
 // API Request helper
 async function apiRequest(endpoint, options = {}) {
     const token = getToken();
-    
+
+    // Ensure trailing slash to avoid 307 redirects that can drop POST bodies
+    if (!endpoint.includes('?') && !endpoint.endsWith('/')) {
+        endpoint = endpoint + '/';
+    }
+
     const defaultHeaders = {
         'Content-Type': 'application/json',
     };
-    
+
     if (token) {
         defaultHeaders['Authorization'] = `Bearer ${token}`;
     }
-    
+
     const config = {
         ...options,
         headers: {
@@ -61,22 +66,29 @@ async function apiRequest(endpoint, options = {}) {
             ...options.headers,
         },
     };
-    
+
     try {
         const response = await fetch(`${API_BASE}${endpoint}`, config);
-        
+
         if (response.status === 401) {
             removeToken();
-            window.location.href = 'login.html';
+            window.location.href = 'login';
             return null;
         }
-        
+
         const data = await response.json();
-        
+
         if (!response.ok) {
+            // Pydantic validation errors come as an array in data.detail
+            if (Array.isArray(data.detail)) {
+                const msg = data.detail
+                    .map(e => `${e.loc.slice(1).join(' → ')}: ${e.msg}`)
+                    .join('\n');
+                throw new Error(msg);
+            }
             throw new Error(data.detail || 'An error occurred');
         }
-        
+
         return data;
     } catch (error) {
         console.error('API Error:', error);
@@ -100,7 +112,7 @@ const authAPI = {
     
     logout: () => {
         removeToken();
-        window.location.href = 'login.html';
+        window.location.href = 'login';
     },
     
     getMe: () => apiRequest('/auth/me'),

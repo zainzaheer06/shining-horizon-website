@@ -180,21 +180,28 @@ function getFormData(formId) {
     const form = document.getElementById(formId);
     const formData = new FormData(form);
     const data = {};
-    
+
+    // Explicitly capture all checkboxes first (unchecked ones are absent from FormData)
+    Array.from(form.elements).forEach(el => {
+        if (el.type === 'checkbox' && el.name) {
+            data[el.name] = el.checked;
+        }
+    });
+
     formData.forEach((value, key) => {
-        // Handle checkboxes
-        if (form.elements[key]?.type === 'checkbox') {
-            data[key] = form.elements[key].checked;
+        const el = form.elements[key];
+        if (el?.type === 'checkbox') {
+            return; // already handled above
         } else if (value !== '') {
-            // Convert numeric strings to numbers
-            if (!isNaN(value) && value !== '') {
+            // Only convert to number for number inputs and selects, not text fields
+            if ((el?.type === 'number' || el?.tagName === 'SELECT') && !isNaN(value) && value.trim() !== '') {
                 data[key] = Number(value);
             } else {
                 data[key] = value;
             }
         }
     });
-    
+
     return data;
 }
 

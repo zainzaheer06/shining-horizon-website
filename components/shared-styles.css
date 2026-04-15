@@ -58,10 +58,20 @@ html, body {
 /* Card Styles */
 .product-card {
     transition: all 0.3s ease;
+    display: flex !important;
+    flex-direction: column !important;
 }
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0, 136, 204, 0.15);
+}
+.product-card > div:last-child {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 !important;
+}
+.product-card > div:last-child a {
+    margin-top: auto !important;
 }
 
 .category-card {

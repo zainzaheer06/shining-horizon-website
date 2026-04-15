@@ -254,6 +254,7 @@ body {
     cursor: pointer;
     border: none;
     transition: all 0.2s;
+    text-decoration: none;
 }
 
 .btn-primary {

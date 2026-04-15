@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category - Shining Horizon Trading</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="components/shared-styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2d8bc9',
+                        'primary-dark': '#1a5a8a',
+                        'primary-light': '#5bb5e0',
+                    },
+                    fontFamily: { 'inter': ['Inter', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .product-card { transition: all 0.3s ease; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(45,139,201,0.15); }
+    </style>
+</head>
+<body class="bg-gray-50 pt-16">
+    <div id="header-placeholder"></div>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <nav class="flex text-sm">
+                <a href="index" class="text-gray-500 hover:text-primary">Home</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <a href="categories" class="text-gray-500 hover:text-primary">Categories</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <span id="breadcrumb-name" class="text-primary font-medium">Loading...</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="bg-gradient-to-r from-primary to-primary-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="hero-content" class="text-center">
+                <div class="animate-pulse">
+                    <div class="h-10 bg-white/20 rounded w-64 mx-auto mb-4"></div>
+                    <div class="h-5 bg-white/10 rounded w-96 mx-auto"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-gray-900 mb-2" id="section-title">Products</h2>
+                <p class="text-gray-600" id="section-subtitle">Browse our complete range</p>
+            </div>
+            <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+                <div class="col-span-full flex justify-center py-12">
+                    <div class="animate-spin rounded-full h-10 w-10 border-4 border-primary border-t-transparent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="components/header.js?v=20250105"></script>
+    <script src="components/footer.js?v=20250105"></script>
+    <script>
+        const API_BASE = 'http://localhost:8001';
+
+        function imgUrl(path) {
+            if (!path) return null;
+            return `${API_BASE}/uploads/${path.replace('backend/uploads/', '')}`;
+        }
+
+        function getSlug() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('slug');
+        }
+
+        async function loadCategory() {
+            const slug = getSlug();
+            if (!slug) {
+                document.getElementById('hero-content').innerHTML =
+                    '<p class="text-white/80">No category specified.</p>';
+                return;
+            }
+
+            try {
+                const res = await fetch(`${API_BASE}/categories/public/${slug}/products/`);
+                if (!res.ok) throw new Error('Category not found');
+                const data = await res.json();
+
+                const cat = data.category;
+                const products = data.products;
+
+                // Update page title & breadcrumb
+                document.title = `${cat.name} - Shining Horizon Trading`;
+                document.getElementById('breadcrumb-name').textContent = cat.name;
+
+                // Hero
+                document.getElementById('hero-content').innerHTML = `
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">${cat.name}</h1>
+                    <p class="text-white/90 text-lg max-w-2xl mx-auto">${cat.hero_description || cat.description || ''}</p>
+                `;
+
+                // Section subtitle
+                document.getElementById('section-title').textContent = `${cat.name} Products`;
+                document.getElementById('section-subtitle').textContent =
+                    `Browse our complete range of ${cat.name.toLowerCase()} products`;
+
+                // Products grid
+                const grid = document.getElementById('products-grid');
+                if (products.length === 0) {
+                    grid.innerHTML = `
+                        <div class="col-span-full text-center py-16 text-gray-500">
+                            <svg class="mx-auto mb-4 w-12 h-12 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
+                            </svg>
+                            <p class="text-lg font-medium">No products yet</p>
+                            <p class="text-sm mt-1">Products added in the admin panel will appear here.</p>
+                        </div>`;
+                } else {
+                    grid.innerHTML = products.map((p, i) => {
+                        const img = p.image
+                            ? `<img src="${imgUrl(p.image)}" class="w-full h-full object-cover" alt="${p.name}">`
+                            : `<div class="w-full h-full flex items-center justify-center bg-gray-100">
+                                   <span class="text-gray-400 text-4xl font-bold">${p.name.charAt(0)}</span>
+                               </div>`;
+                        const quoteUrl = `/quote?product=${encodeURIComponent(p.part_number || p.name)}&category=${encodeURIComponent(cat.name)}`;
+                        return `
+                            <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="${(i % 8) * 50}">
+                                <div class="h-40 overflow-hidden bg-gray-100">${img}</div>
+                                <div class="p-5" style="display:flex;flex-direction:column;flex:1;">
+                                    <h3 class="text-sm font-bold text-gray-900 mb-1">${p.name}</h3>
+                                    ${p.part_number ? `<p class="text-xs text-gray-500 mb-2">Part: ${p.part_number}</p>` : ''}
+                                    ${p.short_description ? `<p class="text-gray-500 text-xs mb-3">${p.short_description}</p>` : '<p class="flex-1"></p>'}
+                                    <a href="${quoteUrl}" class="block w-full bg-primary text-white text-center py-2 rounded-lg font-medium text-sm hover:bg-primary-dark transition mt-auto">Request Quote</a>
+                                </div>
+                            </div>`;
+                    }).join('');
+                }
+
+                AOS.init({ duration: 600, easing: 'ease-out', once: true });
+
+            } catch (err) {
+                document.getElementById('hero-content').innerHTML =
+                    `<p class="text-white/80">Category not found.</p>`;
+                document.getElementById('products-grid').innerHTML =
+                    `<p class="col-span-full text-center text-red-500 py-12">${err.message}. Make sure the backend is running.</p>`;
+            }
+        }
+
+        loadCategory();
+    </script>
+</body>
+</html>

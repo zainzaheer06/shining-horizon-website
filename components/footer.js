@@ -148,7 +148,7 @@ function loadFooter() {
         <div class="bg-gray-950 border-t border-gray-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
                 <div class="flex flex-col md:flex-row justify-between items-center gap-3">
-                    <p class="text-gray-500 text-sm">&copy; 2025 Shining Horizon Trading Co. All rights reserved.</p>
+                    <p class="text-gray-500 text-sm">&copy; 2026 Shining Horizon Trading Co. All rights reserved.</p>
                     <p class="text-gray-600 text-xs">Asad Bin Al Furat Street 3264, Al Amal District 7748, Riyadh, Saudi Arabia</p>
                 </div>
             </div>

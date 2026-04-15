@@ -34,9 +34,6 @@
                 </button>
             </form>
             
-            <p style="text-align: center; margin-top: 24px; color: #64748b; font-size: 0.875rem;">
-                Default: admin / admin123
-            </p>
         </div>
     </div>
     
@@ -44,7 +41,7 @@
     <script>
         // Redirect if already logged in
         if (isLoggedIn()) {
-            window.location.href = 'index.html';
+            window.location.href = 'index';
         }
         
         document.getElementById('login-form').addEventListener('submit', async (e) => {
@@ -63,7 +60,7 @@
             
             try {
                 await authAPI.login(username, password);
-                window.location.href = 'index.html';
+                window.location.href = 'index';
             } catch (error) {
                 errorEl.textContent = error.message || 'Invalid username or password';
                 errorEl.style.display = 'block';

@@ -42,7 +42,7 @@
     <div class="bg-white border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <nav class="flex text-sm">
-                <a href="index.html" class="text-gray-500 hover:text-primary">Home</a>
+                <a href="/" class="text-gray-500 hover:text-primary">Home</a>
                 <span class="mx-2 text-gray-400">/</span>
                 <span class="text-primary font-medium">Our Brands</span>
             </nav>
@@ -280,8 +280,8 @@
                 We work with many more manufacturers and can source products from various brands. Contact us for your specific requirements.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="products.html" class="bg-white text-primary font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition">View All Products</a>
-                <a href="quote.html" class="border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white hover:text-primary transition">Request Quote</a>
+                <a href="/products" class="bg-white text-primary font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition">View All Products</a>
+                <a href="/quote" class="border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white hover:text-primary transition">Request Quote</a>
                 <a href="https://wa.me/966536598520" target="_blank" class="border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white hover:text-primary transition">WhatsApp Us</a>
             </div>
         </div>
@@ -303,7 +303,7 @@
         // Brand products modal/redirect function
         function showBrandProducts(brandName) {
             // For now, redirect to products page with search
-            window.location.href = `products.html?search=${encodeURIComponent(brandName)}`;
+            window.location.href = `/products?search=${encodeURIComponent(brandName)}`;
         }
     </script>
 </body>
